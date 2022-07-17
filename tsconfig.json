@@ -1,0 +1,21 @@
+{
+  // Used only for type checking and linting.
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "CommonJS",
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "jsx": "preserve",
+    "allowJs": true,
+    "incremental": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "target": "ES2017"
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

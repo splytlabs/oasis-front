@@ -1,0 +1,6 @@
+.next
+coverage
+node_modules
+public
+*.config.js
+zx
