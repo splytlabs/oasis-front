@@ -12,7 +12,8 @@ const client = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const result = await client
   .from('nft_infos')
-  .select('token_id,name,image')
+  .select('id,name,image,Speed')
   .limit(5)
-  .gt('token_id', '10000');
+  .gt('Speed', 50)
+  .lt('Speed', 80);
 console.log('result.body', result.body);

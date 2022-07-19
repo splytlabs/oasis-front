@@ -65,6 +65,7 @@
     "react-dom": "18.2.0",
     "react-icons": "4.4.0",
     "react-infinite-scroll-component": "6.1.0",
+    "react-range": "1.8.14",
     "twind": "0.16.17"
   },
   "devDependencies": {

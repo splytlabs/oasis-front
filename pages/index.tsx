@@ -11,14 +11,26 @@ import Image from 'next/image';
 import { useState } from 'react';
 import NFTSearchPanel from 'components/nft-search-panel';
 
+const queryHead = '/rest/v1/nft_infos?select=id,name,image';
+
 const Home: NextPage = () => {
   const cardWidth = 300;
   const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(queryHead);
 
   const handleOpenSearchModal = () => {
     setSearchModalOpen(true);
   };
   const handleCloseSearchModal = () => {
+    setSearchModalOpen(false);
+  };
+  const handleApplySearchQuery = (query: string) => {
+    if (query.startsWith(queryHead)) {
+      console.info('Updated Query:', query);
+      setSearchQuery(query);
+    } else {
+      console.error('Invalid Query:', query);
+    }
     setSearchModalOpen(false);
   };
 
@@ -53,9 +65,11 @@ const Home: NextPage = () => {
               fixed w-screen h-screen z-20 bg-black bg-opacity-50
               flex flex-col justify-center items-center
             `}
-            onClick={handleCloseSearchModal}
           >
-            <NFTSearchPanel></NFTSearchPanel>
+            <NFTSearchPanel
+              onApply={handleApplySearchQuery}
+              onClose={handleCloseSearchModal}
+            />
           </div>
         )}
         <MetricsBar
@@ -70,8 +84,8 @@ const Home: NextPage = () => {
           ]}
         />
         <PostgrestInfiniteScroll
-          query="/rest/v1/nft_infos?select=id,name,image"
-          limit={20}
+          query={searchQuery}
+          limit={10}
           className={tw`
             w-full max-w-[1440px] flex flex-row flex-wrap justify-center gap-8
           `}
