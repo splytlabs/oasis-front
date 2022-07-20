@@ -85,7 +85,7 @@ const Home: NextPage = () => {
         />
         <PostgrestInfiniteScroll
           query={searchQuery}
-          limit={10}
+          limit={12}
           className={tw`
             w-full max-w-[1440px] flex flex-row flex-wrap justify-center gap-8
           `}

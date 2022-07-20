@@ -12,8 +12,9 @@ const client = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const result = await client
   .from('nft_infos')
-  .select('id,name,image,Speed')
+  .select('id,name,image')
   .limit(5)
-  .gt('Speed', 50)
-  .lt('Speed', 80);
+  .order('id', {ascending: false, nullsFirst: false})
+  .gt('"Talent:RunawayRunner"', 0)
+  .lt('"Talent:RunawayRunner"', 4);
 console.log('result.body', result.body);
