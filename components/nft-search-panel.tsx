@@ -1,5 +1,5 @@
 import { tw } from 'twind';
-import { createContext, useContext, useState } from 'React';
+import { createContext, useContext, useState } from 'react';
 import IconButton from 'components/icon-button';
 import { CgClose } from 'react-icons/cg';
 import { Range, getTrackBackground } from 'react-range';
