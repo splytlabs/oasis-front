@@ -39,7 +39,7 @@ export const FilterDispatchContext = createContext<{ set: FilterSetDispatcher, r
 
 export const FilterStateContext = createContext<FilterState>(new Map());
 
-export const FilterProvider: React.FC<{ children: ReactNode[]}> = ({children}) => {
+export const FilterProvider: React.FC<{ children: ReactNode[] | ReactNode}> = ({children}) => {
   const [filter, setFilter] = useState<FilterState>(buildFilterState(MOCK_FILTER_DATA));
 
   const set = useCallback((category: string, name: string, value: string) => {
