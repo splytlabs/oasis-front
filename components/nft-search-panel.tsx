@@ -1,15 +1,10 @@
 import { tw } from 'twind';
-import { createContext, useContext, useState } from 'react';
+import { useState } from 'react';
 import IconButton from 'components/icon-button';
 import { CgClose } from 'react-icons/cg';
 import { Range, getTrackBackground } from 'react-range';
-
-export const NFTSearchPanelContext = createContext({
-  filterMap: new Map<string, string>(),
-  setFilter: (() => {
-    return;
-  }) as (name: string, filter: string) => void,
-});
+import { useFilter } from '../hooks/useFilter';
+import NftSearchPanelCategory from './nft-search-panel-category';
 
 export type NFTSearchPanelProps = {
   onApply?: (query: string) => void;
@@ -17,38 +12,22 @@ export type NFTSearchPanelProps = {
   onClose?: () => void;
 };
 
-type TabName = 'Basic' | 'Appearance' | 'Properties';
+export type TabName = 'Basic' | 'Appearance' | 'Properties';
 
 export default function NFTSearchPanel(props: NFTSearchPanelProps) {
   const tabNames = ['Basic', 'Appearance', 'Properties'] as TabName[];
   const [tabName, setTabName] = useState<TabName>('Properties');
-  const [filterState, setFilterState] = useState({
-    filterMap: useContext(NFTSearchPanelContext).filterMap,
-  });
-  const { filterMap } = filterState;
-  const setFilter = (name: string, filter: string) => {
-    filterMap.set(name, filter);
-    setFilterState({ filterMap });
-  };
+  const {getFilterQuery, resetFilter} = useFilter();
 
   const buildQuery = () => {
-    const head = '/rest/v1/nft_infos?select=id,name,image';
-    const body = Array.from(filterMap.values())
-      .filter((x) => x)
-      .join('&');
-    return `${head}${!body ? '' : `&${body}`}`;
+    return getFilterQuery();
   };
 
   const handleReset = () => {
-    for (const key of filterMap.keys()) {
-      filterMap.set(key, '');
-    }
-    setFilterState({ filterMap });
-    props.onReset?.();
+    resetFilter('properties');
   };
 
   return (
-    <NFTSearchPanelContext.Provider value={{ filterMap, setFilter }}>
       <div
         className={tw`
         w-[1024px] h-[720px] rounded-xl
@@ -71,7 +50,7 @@ export default function NFTSearchPanel(props: NFTSearchPanelProps) {
               `}
                 onClick={() => setTabName(item)}
               >
-                {item}
+                <NftSearchPanelCategory name={item}/>
               </div>
             );
           })}
@@ -97,6 +76,7 @@ export default function NFTSearchPanel(props: NFTSearchPanelProps) {
           >
             <button
               className={tw`
+              before:content-['aaa']
               bg-accent rounded-lg focus:outline-none
               text-white font-bold w-24 h-10
             `}
@@ -117,7 +97,6 @@ export default function NFTSearchPanel(props: NFTSearchPanelProps) {
           </div>
         </div>
       </div>
-    </NFTSearchPanelContext.Provider>
   );
 }
 
@@ -162,17 +141,22 @@ type StatusRangeProps = {
 function StatusRange({ name }: StatusRangeProps) {
   const min = 0;
   const max = 100;
-  const { filterMap, setFilter } = useContext(NFTSearchPanelContext);
+  const { filter, setFilter} = useFilter();
 
   const handleChange = (values: number[]) => {
     const a = Math.max(values[0] ?? min, min);
     const b = Math.min(values[1] ?? max, max);
-    setFilter(name, `${name}=gte.${a}&${name}=lte.${b}`);
+
+    if (a === min && b === max) {
+      setFilter('properties', name, "");
+    } else {
+      setFilter('properties', name, `${name}=gte.${a}&${name}=lte.${b}`);
+    }
   };
 
   const range = () => {
-    const values = filterMap
-      .get(name)
+    const values = filter.get('properties')
+      ?.get(name)
       ?.match(/\.[0-9]+/g)
       ?.map((x) => Number.parseInt(x.substring(1)));
     return [values?.[0] ?? min, values?.[1] ?? max];
@@ -194,17 +178,22 @@ function TalentRange({ name }: StatusRangeProps) {
   const max = 4;
   const enumNames = ['D', 'C', 'B', 'A', 'S'];
   const colName = `Talent:${name.replaceAll(' ', '')}`;
-  const { filterMap, setFilter } = useContext(NFTSearchPanelContext);
+  const { filter, setFilter} = useFilter();
 
   const handleChange = (values: number[]) => {
     const a = Math.max(values[0] ?? min, min);
     const b = Math.min(values[1] ?? max, max);
-    setFilter(colName, `"${colName}"=gte.${a}&"${colName}"=lte.${b}`);
+
+    if (a === min && b === max) {
+      setFilter('properties', name, "");
+    } else {
+      setFilter('properties', name, `"${colName}"=gte.${a}&"${colName}"=lte.${b}`);
+    }
   };
 
   const range = () => {
-    const values = filterMap
-      .get(colName)
+    const values = filter.get('properties')
+      ?.get(name)
       ?.match(/\.[0-9]+/g)
       ?.map((x) => Number.parseInt(x.substring(1)));
     return [values?.[0] ?? min, values?.[1] ?? max];
