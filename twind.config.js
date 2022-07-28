@@ -8,6 +8,7 @@ export default {
       colors: {
         // 아래의 주소에서 컬러 팔레트 만들 수 있음
         // https://www.tailwindshades.com/
+        'black-dim': 'rgba(8, 8, 8, 0.6)',
         primary: {
           DEFAULT: '#5E7196',
           50: '#F7F8FA',

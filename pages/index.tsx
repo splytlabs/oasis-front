@@ -9,21 +9,16 @@ import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
 import { useState } from 'react';
-import NFTSearchPanel from 'components/nft-search-panel';
+import { Modals, useModals } from '../hooks/useModal';
+import SearchModal from '../components/modals/SearchModal';
 
 const queryHead = '/rest/v1/rental_infos_view?select=';
 
 const Home: NextPage = () => {
+  const { openModal } = useModals();
   const cardWidth = 300;
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState(queryHead + '*');
 
-  const handleOpenSearchModal = () => {
-    setSearchModalOpen(true);
-  };
-  const handleCloseSearchModal = () => {
-    setSearchModalOpen(false);
-  };
   const handleApplySearchQuery = (query: string) => {
     if (query.startsWith(queryHead)) {
       console.info('Updated Query:', query);
@@ -31,7 +26,10 @@ const Home: NextPage = () => {
     } else {
       console.error('Invalid Query:', query);
     }
-    setSearchModalOpen(false);
+  };
+
+  const handleOpenSearchModal = () => {
+    openModal(SearchModal, { onApply: handleApplySearchQuery });
   };
 
   return (
@@ -41,7 +39,14 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Game NFT Search Demo</title>
       </Head>
-      <main className={tw`min-h-screen flex flex-col items-center`}>
+      <main
+        id={'main'}
+        className={tw`
+        w-[100%] h-[100%]
+        absolute top-0 left-0
+        overflow-scroll
+        flex flex-col items-center`}
+      >
         <AppHeader>
           <div className={tw`font-bold text-accent px-4`}>Rent</div>
           <div className={tw`border-l-1 w-auto h-4 border-primary-300`}></div>
@@ -59,19 +64,6 @@ const Home: NextPage = () => {
           <IconButton icon={<FiShare2 />} />
           <IconButton icon={<FiHeart />} />
         </div>
-        {searchModalOpen && (
-          <div
-            className={tw`
-              fixed w-screen h-screen z-20 bg-black bg-opacity-50
-              flex flex-col justify-center items-center
-            `}
-          >
-            <NFTSearchPanel
-              onApply={handleApplySearchQuery}
-              onClose={handleCloseSearchModal}
-            />
-          </div>
-        )}
         <MetricsBar
           className={tw`mt-8 mb-12`}
           entries={[
@@ -110,6 +102,7 @@ const Home: NextPage = () => {
           <div className={tw`w-[${cardWidth}px]`}></div>
         </PostgrestInfiniteScroll>
       </main>
+      <Modals />
     </>
   );
 };

@@ -70,6 +70,7 @@ export default function PostgrestInfiniteScroll(
       next={() => void fetchData()}
       hasMore={hasMore}
       loader={props.loader}
+      scrollableTarget={"main"}
     >
       {!hasMore && (
         <div className={tw`absolute mt-24`}>
