@@ -18,28 +18,37 @@ export type PostgrestInfiniteScrollProps = {
 export default function PostgrestInfiniteScroll(
   props: PostgrestInfiniteScrollProps
 ) {
+  const [fetchQuery] = useState({ current: '', previous: '' });
   const [items, setItems] = useState<object[]>([]);
   const [hasMore, setHasMore] = useState(true);
 
   const fetchData = async () => {
-    const lastItem = items[items.length - 1] as { id: string };
-    const lastItemId = lastItem?.id ?? '';
     const queryParts = [
       props.query,
-      !lastItemId ? '' : `id=lt.${lastItemId}`,
       `order=id.desc.nullslast`,
       `limit=${props.limit}`,
+      `offset=${items.length}`,
     ];
     const query = queryParts.filter((x) => x).join('&');
-    // console.log('fetchData():', query);
-    const newItems = await runPostgrestQuery(query, {
-      endpointURL: props.url,
-      apiKey: props.apiKey,
-    });
-    if (newItems.length > 0) {
-      setItems(items.concat(newItems));
-    } else if (items.length == 0) {
-      setHasMore(false);
+    if (fetchQuery.current === query) {
+      return;
+    }
+    fetchQuery.previous = fetchQuery.current;
+    fetchQuery.current = query;
+    try {
+      const { items: newItems } = await runPostgrestQuery(query, {
+        endpointURL: props.url,
+        apiKey: props.apiKey,
+        count: 'exact',
+      });
+      if (newItems.length > 0) {
+        setItems(items.concat(newItems));
+      } else if (items.length == 0) {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error(error);
+      fetchQuery.current = fetchQuery.previous;
     }
   };
 
