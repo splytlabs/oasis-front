@@ -11,12 +11,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 import NFTSearchPanel from 'components/nft-search-panel';
 
-const queryHead = '/rest/v1/nft_infos?select=id,name,image';
+const queryHead = '/rest/v1/rental_infos_view?select=';
 
 const Home: NextPage = () => {
   const cardWidth = 300;
   const [searchModalOpen, setSearchModalOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(queryHead);
+  const [searchQuery, setSearchQuery] = useState(queryHead + '*');
 
   const handleOpenSearchModal = () => {
     setSearchModalOpen(true);
