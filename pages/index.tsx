@@ -8,7 +8,7 @@ import { MetricsBar } from 'components/metrics-bar';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Modals, useModals } from '../hooks/useModal';
 import SearchModal from '../components/modals/SearchModal';
 
@@ -82,15 +82,21 @@ const Home: NextPage = () => {
             w-full max-w-[1440px] flex flex-row flex-wrap justify-center gap-8
           `}
           onRenderItem={(item) => {
-            const row = item as { id: string; name: string; image: string };
+            const row = item as { [key: string]: string };
             return (
               <NFTCard
                 key={row.id}
                 width={cardWidth}
-                name={row.name}
-                image={row.image}
+                name={row.name ?? ''}
+                image={row.image ?? ''}
               >
-                <DummyNFTCardContent />
+                <NFTCardContent
+                  contractAddress={row.contract_address ?? ''}
+                  tokenId={row.token_id ?? ''}
+                  daysMin={Number(row.days_min)}
+                  daysMax={Number(row.days_max)}
+                  price={Number(row.price)}
+                />
               </NFTCard>
             );
           }}
@@ -107,14 +113,33 @@ const Home: NextPage = () => {
   );
 };
 
-function DummyNFTCardContent() {
+type NFTCardContentProps = {
+  contractAddress: string;
+  tokenId: string;
+  daysMin: number;
+  daysMax: number;
+  price: number;
+};
+
+function NFTCardContent({
+  contractAddress,
+  tokenId,
+  daysMin,
+  daysMax,
+  price,
+}: NFTCardContentProps) {
+  const aRef = useRef<HTMLAnchorElement>(null);
+  const handleRentButtonClick = () => {
+    aRef.current?.click();
+  };
+
   return (
     <>
       <div className={tw`w-full flex flex-row items-center px-1 py-4`}>
         <div className={tw`text-sm text-primary-700`}>Rental Period</div>
         <div className={tw`flex-1`}></div>
         <div className={tw`font-bold text-lg text-primary-700 pr-[1px]`}>
-          3~9
+          {`${daysMin}~${daysMax}`}
         </div>
         <div className={tw`text-sm text-primary-700 relative top-[2px]`}>
           /Days
@@ -125,14 +150,24 @@ function DummyNFTCardContent() {
           w-full h-12 bg-accent rounded-full flex flex-row
           justify-center items-center text-white pr-2
         `}
+        onClick={handleRentButtonClick}
       >
+        <a
+          ref={aRef}
+          className={tw`hidden`}
+          href={`/${contractAddress}@${tokenId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
         <Image
           src="/polygon-icon.png"
           alt="polygon-icon"
           width={24}
           height={24}
         ></Image>
-        <div className={tw`font-bold text-2xl pl-1 pr-[1px]`}>10</div>
+        <div className={tw`font-bold text-2xl pl-1 pr-[1px]`}>
+          {`${Math.floor(price / 10_000_000)}`}
+        </div>
         <div className={tw`font-bold text-lg relative top-[1px]`}>/Day</div>
       </button>
       <div className={tw`h-8`}></div>
