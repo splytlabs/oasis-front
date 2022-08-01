@@ -1,3 +1,4 @@
+import React from 'react';
 import ModalContainer from './ModalContainer';
 import { useEffect, useRef, useState } from 'react';
 import { useFilter } from '../../hooks/useFilter';
@@ -6,7 +7,6 @@ import NftSearchPanelCategory from '../nft-search-panel-category';
 import IconButton from '../icon-button';
 import { CgClose } from 'react-icons/cg';
 import { getTrackBackground, Range } from 'react-range';
-import React from 'react';
 
 interface SearchModalProps {
   onApply?: (query: string) => void;
@@ -31,7 +31,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
 
   const setAnimation = (element: HTMLDivElement) => {
     element.style.transition = `top 500ms cubic-bezier(0.25, 1, 0.5, 1)`;
-    element.style.top = '50%';
+    setTimeout(() => (element.style.top = '50%'));
     element.addEventListener(
       'transitionend',
       () => (element.style.transition = ''),
