@@ -31,7 +31,7 @@ const ModalContainer: React.FC<ModalWrapperProps> = ({
         className={tw`
         w-[100%] h-[100%]
         bg-black-dim
-        flex flex-col justify-center items-center
+        relative
         `}
         onClick={handleDimClick}
       >

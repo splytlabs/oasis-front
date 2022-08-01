@@ -1,5 +1,5 @@
 import ModalContainer from './ModalContainer';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useFilter } from '../../hooks/useFilter';
 import { tw } from 'twind';
 import NftSearchPanelCategory from '../nft-search-panel-category';
@@ -19,6 +19,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
   const tabNames = ['Basic', 'Appearance', 'Properties'] as TabName[];
   const [tabName, setTabName] = useState<TabName>('Properties');
   const { getFilterQuery, resetFilter } = useFilter();
+  const modal = useRef<HTMLDivElement>(null);
 
   const buildQuery = () => {
     return getFilterQuery();
@@ -28,11 +29,30 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
     resetFilter('properties');
   };
 
+  const setAnimation = (element: HTMLDivElement) => {
+    element.style.transition = `top 500ms cubic-bezier(0.25, 1, 0.5, 1)`;
+    element.style.top = '50%';
+    element.addEventListener(
+      'transitionend',
+      () => (element.style.transition = ''),
+      { once: true }
+    );
+  };
+
+  useEffect(() => {
+    const modalElement = modal.current;
+    if (modalElement) {
+      setAnimation(modalElement);
+    }
+  }, []);
+
   return (
     <ModalContainer onDimClick={onClose}>
       <div
+        ref={modal}
         className={tw`
         w-[1024px] h-[720px] rounded-xl
+        absolute top-[100%] left-[50%] -translate-x-1/2 -translate-y-1/2
         overflow-hidden flex flex-row items-stretch
       `}
         onClick={(event) => event.stopPropagation()}
