@@ -48,7 +48,7 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
           <LeftSide rentalInfo={rentalInfo} />
           <RightSide rentalInfo={rentalInfo} />
         </div>
-        <div
+        {/* <div
           className={tw`
             font-bold text-sm text-primary-800 mt-12 mb-4
           `}
@@ -56,7 +56,7 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
           <pre>
             {JSON.stringify(isValid ? rentalInfo : 'Not Found', null, 2)}
           </pre>
-        </div>
+        </div> */}
       </main>
     </>
   );
@@ -341,9 +341,128 @@ function TabGroup({ startTabName, tabs }: TabGroupProps) {
 }
 
 function DerbyStarsStatsTab({ rentalInfo }: PageProps) {
-  return <div>DerbyStarsStatsTab</div>;
+  const statusNames = ['Speed', 'Power', 'Stamina', 'Grit', 'Intellect'];
+  const talentNames = [
+    'Runaway Runner',
+    'Front Runner',
+    'Stalker',
+    'Stretch Runner',
+  ];
+  return (
+    <div
+      className={tw`
+        w-full bg-primary-50 rounded-lg flex flex-col p-4 gap-6
+      `}
+    >
+      {statusNames.map((x) => {
+        const p = Number(rentalInfo[x]) || 0;
+        return (
+          <div key={x} className={tw`flex flex-col gap-2`}>
+            <div className={tw`font-bold text(primary-700 sm)`}>{x}</div>
+            <div
+              className={tw`relative overflow-hidden rounded-full w-full h-2`}
+            >
+              <div className={tw`w-full h-full bg-white`}></div>
+              <div
+                className={tw`
+                  w-[${p}%] h-full bg-accent absolute top-0 rounded-full
+                `}
+              ></div>
+            </div>
+            <div className={tw`flex flex-row items-end`}>
+              <div className={tw`font-bold text(primary-700 xs)`}>{p}</div>
+              <div className={tw`text(primary-500 [10px])`}>/100</div>
+            </div>
+          </div>
+        );
+      })}
+      <div
+        className={tw`
+          flex flex-col gap-2
+          font-bold text(primary-700 sm)
+        `}
+      >
+        Talent
+        {talentNames.map((name) => {
+          const key = `Talent:${name.replaceAll(' ', '')}`;
+          const grade = ['D', 'C', 'B', 'A', 'S'][Number(rentalInfo[key]) || 0];
+          return (
+            <div
+              key={name}
+              className={tw`
+              flex flex-row items-center bg-white rounded-lg p-2 gap-2
+              text(primary-700 xs) self-start
+            `}
+            >
+              <div>{name}</div>
+              <div className={tw`border-solid border-l-1 h-4`}></div>
+              <div className={tw`font-bold text-accent`}>{grade}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div
+        className={tw`
+          flex flex-col gap-2
+          font-bold text(primary-700 sm)
+        `}
+      >
+        Skills
+        {[...Array(6).keys()].map((x) => {
+          const key = `Skill ${x + 1}`;
+          return (
+            <div
+              key={key}
+              className={tw`
+              flex flex-row items-center bg-white rounded-lg p-2 gap-2
+              text(primary-700 xs) self-start
+            `}
+            >
+              <div>{rentalInfo[key]}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 function DerbyStarsAppearanceTab({ rentalInfo }: PageProps) {
-  return <div>DerbyStarsAppearanceTab</div>;
+  const partNames = [
+    'Horn',
+    'Wings',
+    'Mane',
+    'Eyes',
+    'Muzzle',
+    'Rein',
+    'Torso',
+    'Legs',
+    'Tail',
+  ];
+  return (
+    <div
+      className={tw`
+        w-full bg-primary-50 rounded-lg flex flex-col p-4 gap-6
+      `}
+    >
+      {partNames.map((name) => {
+        return (
+          rentalInfo[name] && (
+            <div
+              key={name}
+              className={tw`
+                flex flex-row items-center p-2 gap-1
+              `}
+            >
+              <div className={tw`font-bold text(primary-900 lg)`}>{name}</div>
+              <div className={tw`flex-1`}></div>
+              <div className={tw`font-bold text(primary-700 sm)`}>
+                {rentalInfo[name]}
+              </div>
+            </div>
+          )
+        );
+      })}
+    </div>
+  );
 }
