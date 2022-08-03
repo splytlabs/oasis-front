@@ -8,23 +8,17 @@ import { MetricsBar } from 'components/metrics-bar';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Modals, useModals } from '../hooks/useModal';
 import SearchModal from '../components/modals/search-modal';
-import { useQuery } from '../hooks/useQuery';
 
 const queryHead = '/rest/v1/rental_infos_view?select=';
 
 const Home: NextPage = () => {
   const { openModal } = useModals();
-  const { fetch } = useQuery();
 
   const [searchQuery, setSearchQuery] = useState(queryHead + '*');
   const cardWidth = 300;
-
-  useEffect(() => {
-    void fetch();
-  }, [fetch]);
 
   const handleApplySearchQuery = (query: string) => {
     if (query.startsWith(queryHead)) {

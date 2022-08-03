@@ -40,7 +40,7 @@ type FilterSetDispatcher = (
 type FilterResetDispatcher = (category: string) => void;
 type FilterResetAllDispatcher = () => void;
 
-type FilterState = Map<string, Map<string, string>>;
+export type FilterState = Map<string, Map<string, string>>;
 
 const FilterDispatchContext = createContext<{
   set: FilterSetDispatcher;

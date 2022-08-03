@@ -1,5 +1,5 @@
 import runPostgrestQuery from '../lib/run-postgrest-query';
-import { useFilter } from './useFilter';
+import { FilterState, useFilter } from './useFilter';
 import React, {
   createContext,
   ReactElement,
@@ -9,20 +9,17 @@ import React, {
   useMemo,
   useState,
 } from 'react';
+import { debounce } from 'lodash';
 
 type DataState = {
-  items: any[];
+  items: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
   totalCount: number;
 };
 
 const QueryDispatchContext = createContext<{
-  fetch: (length?: number) => void;
-  fetchCount: () => void;
+  fetch: (filter: FilterState, length?: number) => void;
 }>({
   fetch: () => {
-    return;
-  },
-  fetchCount: () => {
     return;
   },
 });
@@ -32,73 +29,76 @@ const QueryStateContext = createContext<DataState>({
   totalCount: 0,
 });
 
+const getFilterQuery = (filter: FilterState, length = 12) => {
+  const head = 'rest/v1/rental_infos_view?select=*';
+  const body = [...filter.values()].reduce((filterString, map) => {
+    return filterString + [...map.values()].filter((x) => x).join('&');
+  }, '');
+
+  const filterString = `${head}${!body ? '' : `&${body}`}`;
+
+  const queryParts = [
+    filterString,
+    `order=id.desc.nullslast`,
+    `limit=12`,
+    `offset=${length}`,
+  ];
+
+  return queryParts.filter((x) => x).join('&');
+};
+
 export const QueryProvider: React.FC<{
   children: ReactElement[] | ReactElement;
 }> = ({ children }) => {
   const [data, setData] = useState<DataState>({ items: [], totalCount: 0 });
-  const { filter, getFilterQuery } = useFilter();
+  const { filter } = useFilter();
 
-  const buildQuery = useCallback(
-    (length = 12) => {
-      const filterString = getFilterQuery();
-
-      const queryParts = [
-        filterString,
-        `order=id.desc.nullslast`,
-        `limit=12`,
-        `offset=${length}`,
-      ];
-
-      return queryParts.filter((x) => x).join('&');
-    },
-    [getFilterQuery]
-  );
-
-  const fetch = useCallback(
-    async (length = 12) => {
-      try {
-        const query = buildQuery(length);
-        const result = await runPostgrestQuery(query, {
-          count: 'exact',
-        });
-
-        setData((prev) => {
-          return {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            items: [...prev.items, ...result.items],
-            totalCount: result.totalCount || prev.totalCount,
-          };
-        });
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    [buildQuery]
-  );
-
-  const fetchCount = useCallback(async () => {
+  const fetch = useCallback(async (filter: FilterState, length = 12) => {
     try {
-      const query = buildQuery();
+      const query = getFilterQuery(filter, length);
       const result = await runPostgrestQuery(query, {
         count: 'exact',
       });
 
       setData((prev) => {
         return {
-          ...prev,
-          totalCount: result.totalCount || prev.totalCount,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          items: [...prev.items, ...result.items],
+          totalCount: result.totalCount || 0,
         };
       });
     } catch (error) {
-      console.error(error);
+      console.error('error', error);
     }
-  }, [buildQuery]);
+  }, []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const fetchCount = useCallback(
+    debounce(async (filter: FilterState) => {
+      try {
+        const query = getFilterQuery(filter);
+        const result = await runPostgrestQuery(query, {
+          count: 'exact',
+        });
+
+        setData((prev) => {
+          return {
+            ...prev,
+            totalCount: result.totalCount || 0,
+          };
+        });
+      } catch (error) {
+        console.error('error', error);
+      }
+    }, 300),
+    []
+  );
 
   useEffect(() => {
-    void fetchCount();
-  }, [filter, fetchCount]);
+    void fetchCount(filter);
+  }, [filter]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const dispatch = useMemo(() => ({ fetch, fetchCount }), [fetch, fetchCount]);
+  const dispatch = useMemo(() => ({ fetch }), [fetch]);
 
   return (
     <QueryDispatchContext.Provider value={dispatch}>
@@ -111,11 +111,10 @@ export const QueryProvider: React.FC<{
 
 export const useQuery = () => {
   const data = useContext(QueryStateContext);
-  const { fetch, fetchCount } = useContext(QueryDispatchContext);
+  const { fetch } = useContext(QueryDispatchContext);
 
   return {
     data,
     fetch,
-    fetchCount,
   };
 };
