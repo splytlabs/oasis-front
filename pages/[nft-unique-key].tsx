@@ -21,7 +21,7 @@ type PageProps = {
 };
 
 const Page: NextPage<PageProps> = ({ rentalInfo }) => {
-  const isValid = rentalInfo.contract_address && rentalInfo.token_id;
+  // const isValid = rentalInfo.contract_address && rentalInfo.token_id;
 
   return (
     <>
