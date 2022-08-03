@@ -7,6 +7,7 @@ import NftSearchPanelCategory from '../nft-search-panel-category';
 import IconButton from '../icon-button';
 import { CgClose } from 'react-icons/cg';
 import { getTrackBackground, Range } from 'react-range';
+import { useQuery } from '../../hooks/useQuery';
 
 interface SearchModalProps {
   onApply?: (query: string) => void;
@@ -20,6 +21,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
   const [tabName, setTabName] = useState<TabName>('Properties');
   const { getFilterQuery, resetFilter } = useFilter();
   const modal = useRef<HTMLDivElement>(null);
+  const { data } = useQuery();
 
   const buildQuery = () => {
     return getFilterQuery();
@@ -92,10 +94,16 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
           </div>
           <div
             className={tw`
-            flex flex-row justify-end items-start
+            flex flex-row justify-end items-center
             gap-4 pr-6 pb-6
           `}
           >
+            <p
+              className={tw`
+              font-bold text-primary-400`}
+            >
+              {data.totalCount.toLocaleString()} items
+            </p>
             <button
               className={tw`
               before:content-['aaa']

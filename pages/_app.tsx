@@ -4,13 +4,16 @@ import twindConfig from '../twind.config';
 import { FilterProvider } from '../hooks/useFilter';
 import { ModalProvider } from '../hooks/useModal';
 import '../styles/global.css';
+import { QueryProvider } from '../hooks/useQuery';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <FilterProvider>
-      <ModalProvider>
-        <Component {...pageProps} />
-      </ModalProvider>
+      <QueryProvider>
+        <ModalProvider>
+          <Component {...pageProps} />
+        </ModalProvider>
+      </QueryProvider>
     </FilterProvider>
   );
 }

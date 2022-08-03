@@ -16,6 +16,7 @@ export type RunPostgrestQueryResult = {
   totalCount?: number;
 };
 
+let controller: AbortController, signal;
 export default async function runPostgrestQuery(
   query: string,
   options?: RunPostgrestQueryOptions
@@ -30,7 +31,14 @@ export default async function runPostgrestQuery(
   if (options?.count) {
     headers['Prefer'] = `count=${options.count}`;
   }
-  const res = await fetch(url, { headers });
+
+  if (controller) {
+    controller.abort();
+  }
+  controller = new AbortController();
+  signal = controller.signal;
+
+  const res = await fetch(url, { headers, signal });
   const items = (await res.json()) as unknown[];
   const result = { items } as RunPostgrestQueryResult;
   const range = (res.headers.get('content-range') ?? '').split(/[-/]/);

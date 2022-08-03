@@ -42,7 +42,7 @@ type FilterResetAllDispatcher = () => void;
 
 type FilterState = Map<string, Map<string, string>>;
 
-export const FilterDispatchContext = createContext<{
+const FilterDispatchContext = createContext<{
   set: FilterSetDispatcher;
   reset: FilterResetDispatcher;
   resetAll: FilterResetAllDispatcher;
@@ -58,7 +58,7 @@ export const FilterDispatchContext = createContext<{
   },
 });
 
-export const FilterStateContext = createContext<FilterState>(new Map());
+const FilterStateContext = createContext<FilterState>(new Map());
 
 export const FilterProvider: React.FC<{
   children: ReactNode[] | ReactNode;
