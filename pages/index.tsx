@@ -10,7 +10,7 @@ import NFTCard from 'components/nft-card';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { Modals, useModals } from '../hooks/useModal';
-import SearchModal from '../components/modals/SearchModal';
+import SearchModal from '../components/modals/search-modal';
 import { useQuery } from '../hooks/useQuery';
 
 const queryHead = '/rest/v1/rental_infos_view?select=';

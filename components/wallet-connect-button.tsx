@@ -1,7 +1,7 @@
 import { tw } from 'twind';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useModals } from '../hooks/useModal';
-import LoginModal from './modals/LoginModal';
+import LoginModal from './modals/login-modal';
 
 export type WalletConnectButtonProps = {
   children?: React.ReactNode;

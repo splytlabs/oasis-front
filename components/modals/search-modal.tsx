@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalContainer from './ModalContainer';
+import ModalContainer from './modal-container';
 import { useEffect, useRef, useState } from 'react';
 import { useFilter } from '../../hooks/useFilter';
 import { tw } from 'twind';

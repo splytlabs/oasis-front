@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalContainer from './ModalContainer';
+import ModalContainer from './modal-container';
 import { useEffect, useRef } from 'react';
 import { tw } from 'twind';
 
