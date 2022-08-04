@@ -2,21 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { tw } from 'twind';
 import AppHeader from 'components/app-header';
-import IconButton from 'components/icon-button';
-import { FiHeart, FiSearch, FiShare2 } from 'react-icons/fi';
-import { MetricsBar } from 'components/metrics-bar';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
-import { Modals, useModals } from '../hooks/useModal';
-import SearchModal from '../components/modals/search-modal';
+import { Modals } from '../hooks/useModal';
+import NftListHeader from '../components/nft-list-header';
 
 const queryHead = '/rest/v1/rental_infos_view?select=';
 
 const Home: NextPage = () => {
-  const { openModal } = useModals();
-
   const [searchQuery, setSearchQuery] = useState(queryHead + '*');
   const cardWidth = 300;
 
@@ -27,10 +22,6 @@ const Home: NextPage = () => {
     } else {
       console.error('Invalid Query:', query);
     }
-  };
-
-  const handleOpenSearchModal = () => {
-    openModal(SearchModal, { onApply: handleApplySearchQuery });
   };
 
   return (
@@ -55,59 +46,46 @@ const Home: NextPage = () => {
         </AppHeader>
         <div
           className={tw`
-            font-bold text-5xl text-primary-800 mt-12 mb-4
+            w-full max-w-[1440px]
           `}
         >
-          Derby Stars
-        </div>
-        <div className={tw`flex flex-row justify-center gap-6 my-2`}>
-          <IconButton icon={<FiSearch />} onClick={handleOpenSearchModal} />
-          <IconButton icon={<FiShare2 />} />
-          <IconButton icon={<FiHeart />} />
-        </div>
-        <MetricsBar
-          className={tw`mt-8 mb-12`}
-          entries={[
-            { label: 'FLOOR PRICE', value: '$56.1K' },
-            { label: 'HIGHEST SALE', value: '$756.1K' },
-            { label: 'TOTAL VOLUME', value: '$356.2M' },
-            { label: 'ITEMS', value: '$10K' },
-            { label: 'OWNERS', value: '$1.2K' },
-            { label: 'MARKET CAP', value: '$456.6K' },
-          ]}
-        />
-        <PostgrestInfiniteScroll
-          query={searchQuery}
-          limit={12}
-          className={tw`
-            w-full max-w-[1440px] flex flex-row flex-wrap justify-center gap-8
+          <NftListHeader
+            collection={{ name: 'Derby Stars', imgUrl: '/derby-logo.png' }}
+            onModalApply={handleApplySearchQuery}
+          />
+          <PostgrestInfiniteScroll
+            query={searchQuery}
+            limit={12}
+            className={tw`
+            w-full flex flex-row flex-wrap justify-center gap-8
           `}
-          onRenderItem={(item) => {
-            const row = item as { [key: string]: string };
-            return (
-              <NFTCard
-                key={row.id}
-                width={cardWidth}
-                name={row.name ?? ''}
-                image={row.image ?? ''}
-              >
-                <NFTCardContent
-                  contractAddress={row.contract_address ?? ''}
-                  tokenId={row.token_id ?? ''}
-                  daysMin={Number(row.days_min)}
-                  daysMax={Number(row.days_max)}
-                  price={Number(row.price)}
-                />
-              </NFTCard>
-            );
-          }}
-        >
-          <div className={tw`w-[${cardWidth}px]`}></div>
-          <div className={tw`w-[${cardWidth}px]`}></div>
-          <div className={tw`w-[${cardWidth}px]`}></div>
-          <div className={tw`w-[${cardWidth}px]`}></div>
-          <div className={tw`w-[${cardWidth}px]`}></div>
-        </PostgrestInfiniteScroll>
+            onRenderItem={(item) => {
+              const row = item as { [key: string]: string };
+              return (
+                <NFTCard
+                  key={row.id}
+                  width={cardWidth}
+                  name={row.name ?? ''}
+                  image={row.image ?? ''}
+                >
+                  <NFTCardContent
+                    contractAddress={row.contract_address ?? ''}
+                    tokenId={row.token_id ?? ''}
+                    daysMin={Number(row.days_min)}
+                    daysMax={Number(row.days_max)}
+                    price={Number(row.price)}
+                  />
+                </NFTCard>
+              );
+            }}
+          >
+            <div className={tw`w-[${cardWidth}px]`}></div>
+            <div className={tw`w-[${cardWidth}px]`}></div>
+            <div className={tw`w-[${cardWidth}px]`}></div>
+            <div className={tw`w-[${cardWidth}px]`}></div>
+            <div className={tw`w-[${cardWidth}px]`}></div>
+          </PostgrestInfiniteScroll>
+        </div>
       </main>
       <Modals />
     </>
