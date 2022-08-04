@@ -1,7 +1,7 @@
 import { tw } from 'twind';
 import { useEffect, useState } from 'react';
 import runPostgrestQuery from 'lib/run-postgrest-query';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import { InView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 export type PostgrestInfiniteScrollProps = {
@@ -11,7 +11,6 @@ export type PostgrestInfiniteScrollProps = {
   limit: number;
   onRenderItem: (item: unknown, index: number) => React.ReactNode;
   className?: string;
-  loader?: JSX.Element;
   children?: React.ReactNode;
 };
 
@@ -64,14 +63,7 @@ export default function PostgrestInfiniteScroll(
   });
 
   return (
-    <InfiniteScroll
-      className={tw`${props.className}`}
-      dataLength={items.length}
-      next={() => void fetchData()}
-      hasMore={hasMore}
-      loader={props.loader}
-      scrollableTarget={"main"}
-    >
+    <div className={tw`${props.className}`}>
       {!hasMore && (
         <div className={tw`absolute mt-24`}>
           <Image
@@ -85,6 +77,9 @@ export default function PostgrestInfiniteScroll(
       )}
       {items.map((item, index) => props.onRenderItem(item, index))}
       {props.children}
-    </InfiniteScroll>
+      <InView onChange={(inView) => inView && void fetchData()}>
+        {({ ref }) => <div ref={ref} className={tw`w-full h-8`} />}
+      </InView>
+    </div>
   );
 }
