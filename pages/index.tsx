@@ -7,20 +7,19 @@ import { useState, useRef } from 'react';
 import NftListHeader from '../components/nft-list-header';
 import MainContainer from '../components/layout/main-container';
 import HeadTag from '../components/head-tag';
-
-const queryHead = '/rest/v1/rental_infos_view?select=';
+import { useFilter, FilterState, copyFilterState } from 'hooks/useFilter';
+import { useQuery } from 'hooks/useQuery';
 
 const Home: NextPage = () => {
-  const [searchQuery, setSearchQuery] = useState(queryHead + '*');
+  const { getQueryString, clearQueryData } = useQuery();
+  const { filter } = useFilter();
+  const [appliedFilter, setAppliedFilter] = useState(copyFilterState(filter));
   const cardWidth = 300;
 
-  const handleApplySearchQuery = (query: string) => {
-    if (query.startsWith(queryHead)) {
-      console.info('Updated Query:', query);
-      setSearchQuery(query);
-    } else {
-      console.error('Invalid Query:', query);
-    }
+  const handleApplySearchQuery = (current: FilterState) => {
+    console.info('Updated Query:', getQueryString(current));
+    setAppliedFilter(copyFilterState(current));
+    clearQueryData();
   };
 
   return (
@@ -43,8 +42,8 @@ const Home: NextPage = () => {
             onModalApply={handleApplySearchQuery}
           />
           <PostgrestInfiniteScroll
-            query={searchQuery}
-            limit={12}
+            appliedFilter={appliedFilter}
+            fetchLimit={20}
             className={tw`
             w-full
             grid grid-cols-auto gap-10

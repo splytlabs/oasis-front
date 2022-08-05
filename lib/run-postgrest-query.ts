@@ -33,7 +33,13 @@ export default async function runPostgrestQuery(
   }
 
   const res = await fetch(url, { headers, method: options?.method ?? 'GET' });
-  const items = (await res.json()) as unknown[];
+  const items = await (async () => {
+    try {
+      return (await res.json()) as unknown[];
+    } catch {
+      return [];
+    }
+  })();
   const result = { items } as RunPostgrestQueryResult;
   const range = (res.headers.get('content-range') ?? '').split(/[-/]/);
   const nextOffset = Number.parseInt(range[1] ?? '', 10) + 1;

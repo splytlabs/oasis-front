@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalContainer from './modal-container';
 import { useEffect, useRef, useState } from 'react';
-import { useFilter } from '../../hooks/useFilter';
+import { FilterState, useFilter } from '../../hooks/useFilter';
 import { tw } from 'twind';
 import NftSearchPanelCategory from '../nft-search-panel-category';
 import IconButton from '../icon-button';
@@ -10,7 +10,7 @@ import { getTrackBackground, Range } from 'react-range';
 import { useQuery } from '../../hooks/useQuery';
 
 interface SearchModalProps {
-  onApply?: (query: string) => void;
+  onApply?: (filter: FilterState) => void;
   onClose: () => void;
 }
 
@@ -19,13 +19,9 @@ export type TabName = 'Basic' | 'Appearance' | 'Properties';
 const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
   const tabNames = ['Basic', 'Appearance', 'Properties'] as TabName[];
   const [tabName, setTabName] = useState<TabName>('Properties');
-  const { getFilterQuery, resetFilter } = useFilter();
+  const { filter, resetFilter } = useFilter();
   const modal = useRef<HTMLDivElement>(null);
   const { data } = useQuery();
-
-  const buildQuery = () => {
-    return getFilterQuery();
-  };
 
   const handleReset = () => {
     resetFilter('properties');
@@ -102,7 +98,8 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
               className={tw`
               font-bold text-primary-400`}
             >
-              {data.totalCount.toLocaleString()} items
+              {(data.expectedTotalCount ?? data.totalCount).toLocaleString()}
+              items
             </p>
             <button
               className={tw`
@@ -111,7 +108,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
               text-white font-bold w-24 h-10
             `}
               onClick={() => {
-                onApply?.(buildQuery());
+                onApply?.(filter);
                 onClose();
               }}
             >

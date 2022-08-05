@@ -5,13 +5,14 @@ import { useModals } from '../hooks/useModal';
 import SearchModal from './modals/search-modal';
 import { useQuery } from '../hooks/useQuery';
 import Image from 'next/image';
+import type { FilterState } from 'hooks/useFilter';
 
 type NftListHeaderProps = {
   collection: {
     name: string;
     imgUrl: string;
   };
-  onModalApply: (query: string) => void;
+  onModalApply: (filter: FilterState) => void;
 };
 
 const NftListHeader = ({ onModalApply, collection }: NftListHeaderProps) => {

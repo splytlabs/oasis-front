@@ -12,16 +12,28 @@ import React, {
 import { debounce } from 'lodash';
 
 type DataState = {
-  items: any[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+  items: unknown[];
   totalCount: number;
+  expectedTotalCount?: number;
+  order?: string;
 };
 
 const QueryDispatchContext = createContext<{
-  fetch: (filter: FilterState, length?: number) => void;
+  fetch: (
+    filter: FilterState,
+    offset?: number,
+    limit?: number
+  ) => Promise<unknown[]>;
+  getQueryString: (
+    filter: FilterState,
+    offset?: number,
+    limit?: number
+  ) => string;
+  clearQueryData: () => void;
 }>({
-  fetch: () => {
-    return;
-  },
+  fetch: async () => await Promise.resolve([]),
+  getQueryString: () => '',
+  clearQueryData: () => undefined,
 });
 
 const QueryStateContext = createContext<DataState>({
@@ -29,7 +41,11 @@ const QueryStateContext = createContext<DataState>({
   totalCount: 0,
 });
 
-const getFilterQuery = (filter: FilterState, length = 12) => {
+const getFilterQuery = (
+  filter: FilterState,
+  offset?: number,
+  limit?: number
+) => {
   const head = 'rest/v1/rental_infos_view?select=*';
   const body = [...filter.values()].reduce((filterString, map) => {
     return filterString + [...map.values()].filter((x) => x).join('&');
@@ -39,11 +55,10 @@ const getFilterQuery = (filter: FilterState, length = 12) => {
 
   const queryParts = [
     filterString,
-    `order=id.desc.nullslast`,
-    `limit=12`,
-    `offset=${length}`,
+    `order=price.desc.nullslast,id.desc.nullslast`,
+    `limit=${limit ?? 20}`,
+    `offset=${offset ?? 0}`,
   ];
-
   return queryParts.filter((x) => x).join('&');
 };
 
@@ -53,24 +68,22 @@ export const QueryProvider: React.FC<{
   const [data, setData] = useState<DataState>({ items: [], totalCount: 0 });
   const { filter } = useFilter();
 
-  const fetch = useCallback(async (filter: FilterState, length = 12) => {
-    try {
-      const query = getFilterQuery(filter, length);
+  const fetch = useCallback(
+    async (filter: FilterState, offset?: number, limit?: number) => {
+      const query = getFilterQuery(filter, offset, limit);
       const result = await runPostgrestQuery(query, {
         count: 'exact',
       });
-
       setData((prev) => {
         return {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           items: [...prev.items, ...result.items],
           totalCount: result.totalCount || 0,
         };
       });
-    } catch (error) {
-      console.error('error', error);
-    }
-  }, []);
+      return result.items;
+    },
+    []
+  );
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchCount = useCallback(
@@ -79,12 +92,13 @@ export const QueryProvider: React.FC<{
         const query = getFilterQuery(filter);
         const result = await runPostgrestQuery(query, {
           count: 'exact',
+          method: 'HEAD',
         });
 
         setData((prev) => {
           return {
             ...prev,
-            totalCount: result.totalCount || 0,
+            expectedTotalCount: result.totalCount || 0,
           };
         });
       } catch (error) {
@@ -98,7 +112,14 @@ export const QueryProvider: React.FC<{
     void fetchCount(filter);
   }, [filter]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const dispatch = useMemo(() => ({ fetch }), [fetch]);
+  const clearQueryData = () => {
+    setData({ items: [], totalCount: 0 });
+  };
+
+  const dispatch = useMemo(
+    () => ({ fetch, getQueryString: getFilterQuery, clearQueryData }),
+    [fetch]
+  );
 
   return (
     <QueryDispatchContext.Provider value={dispatch}>
@@ -111,10 +132,13 @@ export const QueryProvider: React.FC<{
 
 export const useQuery = () => {
   const data = useContext(QueryStateContext);
-  const { fetch } = useContext(QueryDispatchContext);
+  const { fetch, getQueryString, clearQueryData } =
+    useContext(QueryDispatchContext);
 
   return {
     data,
     fetch,
+    getQueryString,
+    clearQueryData,
   };
 };

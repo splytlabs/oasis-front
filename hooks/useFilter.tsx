@@ -191,7 +191,7 @@ function buildFilterState(filterData: FilterData): FilterState {
   }, new Map() as FilterState);
 }
 
-function copyFilterState(state: FilterState): FilterState {
+export function copyFilterState(state: FilterState): FilterState {
   return [...state.entries()].reduce((newState, [category, map]) => {
     newState.set(category, copyMap(map));
     return newState;
