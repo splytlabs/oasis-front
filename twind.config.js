@@ -5,6 +5,9 @@ export default {
       screens: {
         standalone: { raw: '(display-mode:standalone)' },
       },
+      gridTemplateColumns: {
+        auto: 'repeat(auto-fill, minmax(220px, 1fr))',
+      },
       colors: {
         // 아래의 주소에서 컬러 팔레트 만들 수 있음
         // https://www.tailwindshades.com/

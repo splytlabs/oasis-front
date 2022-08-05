@@ -57,14 +57,14 @@ const Home: NextPage = () => {
             query={searchQuery}
             limit={12}
             className={tw`
-            w-full flex flex-row flex-wrap justify-center gap-8
+            w-full
+            grid grid-cols-auto gap-10
           `}
             onRenderItem={(item) => {
               const row = item as { [key: string]: string };
               return (
                 <NFTCard
                   key={row.id}
-                  width={cardWidth}
                   name={row.name ?? ''}
                   image={row.image ?? ''}
                 >
