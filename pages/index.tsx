@@ -11,14 +11,22 @@ import { useFilter, FilterState, copyFilterState } from 'hooks/useFilter';
 import { useQuery } from 'hooks/useQuery';
 
 const Home: NextPage = () => {
-  const { getQueryString, clearQueryData } = useQuery();
+  const { data, getQueryString, clearQueryData } = useQuery();
   const { filter } = useFilter();
   const [appliedFilter, setAppliedFilter] = useState(copyFilterState(filter));
-  const cardWidth = 300;
+  const fetchLimit = 20;
 
   const handleApplySearchQuery = (current: FilterState) => {
-    console.info('Updated Query:', getQueryString(current));
+    const offset = data.items.length;
+    const order = data.order;
+    const query = getQueryString(current, offset, fetchLimit, order);
+    console.info('Updated Query:', query);
     setAppliedFilter(copyFilterState(current));
+    clearQueryData();
+  };
+
+  const handleOrderChange = () => {
+    setAppliedFilter(copyFilterState(appliedFilter));
     clearQueryData();
   };
 
@@ -40,14 +48,15 @@ const Home: NextPage = () => {
           <NftListHeader
             collection={{ name: 'Derby Stars', imgUrl: '/derby-logo.png' }}
             onModalApply={handleApplySearchQuery}
+            onOrderChange={handleOrderChange}
           />
           <PostgrestInfiniteScroll
             appliedFilter={appliedFilter}
-            fetchLimit={20}
+            fetchLimit={fetchLimit}
             className={tw`
-            w-full
-            grid grid-cols-auto gap-10
-          `}
+              w-full
+              grid grid-cols-auto gap-10
+            `}
             onRenderItem={(item) => {
               const row = item as { [key: string]: string };
               return (
@@ -66,13 +75,7 @@ const Home: NextPage = () => {
                 </NFTCard>
               );
             }}
-          >
-            <div className={tw`w-[${cardWidth}px]`}></div>
-            <div className={tw`w-[${cardWidth}px]`}></div>
-            <div className={tw`w-[${cardWidth}px]`}></div>
-            <div className={tw`w-[${cardWidth}px]`}></div>
-            <div className={tw`w-[${cardWidth}px]`}></div>
-          </PostgrestInfiniteScroll>
+          ></PostgrestInfiniteScroll>
         </div>
       </MainContainer>
     </>

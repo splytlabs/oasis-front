@@ -22,18 +22,22 @@ const QueryDispatchContext = createContext<{
   fetch: (
     filter: FilterState,
     offset?: number,
-    limit?: number
+    limit?: number,
+    order?: string
   ) => Promise<unknown[]>;
   getQueryString: (
     filter: FilterState,
     offset?: number,
-    limit?: number
+    limit?: number,
+    order?: string
   ) => string;
   clearQueryData: () => void;
+  setOrder: (order: string) => void;
 }>({
   fetch: async () => await Promise.resolve([]),
   getQueryString: () => '',
   clearQueryData: () => undefined,
+  setOrder: () => undefined,
 });
 
 const QueryStateContext = createContext<DataState>({
@@ -44,7 +48,8 @@ const QueryStateContext = createContext<DataState>({
 const getFilterQuery = (
   filter: FilterState,
   offset?: number,
-  limit?: number
+  limit?: number,
+  order?: string
 ) => {
   const head = 'rest/v1/rental_infos_view?select=*';
   const body = [...filter.values()].reduce((filterString, map) => {
@@ -55,7 +60,7 @@ const getFilterQuery = (
 
   const queryParts = [
     filterString,
-    `order=price.desc.nullslast,id.desc.nullslast`,
+    `order=${order || 'price.desc.nullslast'},id.desc.nullslast`,
     `limit=${limit ?? 20}`,
     `offset=${offset ?? 0}`,
   ];
@@ -69,13 +74,19 @@ export const QueryProvider: React.FC<{
   const { filter } = useFilter();
 
   const fetch = useCallback(
-    async (filter: FilterState, offset?: number, limit?: number) => {
-      const query = getFilterQuery(filter, offset, limit);
+    async (
+      filter: FilterState,
+      offset?: number,
+      limit?: number,
+      order?: string
+    ) => {
+      const query = getFilterQuery(filter, offset, limit, order);
       const result = await runPostgrestQuery(query, {
         count: 'exact',
       });
       setData((prev) => {
         return {
+          ...prev,
           items: [...prev.items, ...result.items],
           totalCount: result.totalCount || 0,
         };
@@ -112,13 +123,20 @@ export const QueryProvider: React.FC<{
     void fetchCount(filter);
   }, [filter]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const clearQueryData = () => {
-    setData({ items: [], totalCount: 0 });
-  };
+  const clearQueryData = useCallback(() => {
+    setData({ ...data, items: [], totalCount: 0 });
+  }, [data]);
+
+  const setOrder = useCallback(
+    (order: string) => {
+      setData({ ...data, order });
+    },
+    [data]
+  );
 
   const dispatch = useMemo(
-    () => ({ fetch, getQueryString: getFilterQuery, clearQueryData }),
-    [fetch]
+    () => ({ fetch, getQueryString: getFilterQuery, clearQueryData, setOrder }),
+    [fetch, clearQueryData, setOrder]
   );
 
   return (
@@ -132,7 +150,7 @@ export const QueryProvider: React.FC<{
 
 export const useQuery = () => {
   const data = useContext(QueryStateContext);
-  const { fetch, getQueryString, clearQueryData } =
+  const { fetch, getQueryString, clearQueryData, setOrder } =
     useContext(QueryDispatchContext);
 
   return {
@@ -140,5 +158,6 @@ export const useQuery = () => {
     fetch,
     getQueryString,
     clearQueryData,
+    setOrder,
   };
 };

@@ -6,6 +6,8 @@ import SearchModal from './modals/search-modal';
 import { useQuery } from '../hooks/useQuery';
 import Image from 'next/image';
 import type { FilterState } from 'hooks/useFilter';
+import { BsSortDown, BsSortDownAlt } from 'react-icons/bs';
+import { useEffect } from 'react';
 
 type NftListHeaderProps = {
   collection: {
@@ -13,11 +15,29 @@ type NftListHeaderProps = {
     imgUrl: string;
   };
   onModalApply: (filter: FilterState) => void;
+  onOrderChange: (order: string) => void;
 };
 
-const NftListHeader = ({ onModalApply, collection }: NftListHeaderProps) => {
-  const { data } = useQuery();
+const NftListHeader = ({
+  collection,
+  onModalApply,
+  onOrderChange,
+}: NftListHeaderProps) => {
+  const { data, setOrder } = useQuery();
   const { openModal } = useModals();
+
+  const handleSortToggleClick = () => {
+    if (data.order) {
+      setOrder('');
+    } else {
+      setOrder('price.asc.nullslast');
+    }
+  };
+
+  useEffect(() => {
+    onOrderChange(data.order ?? '');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.order]);
 
   return (
     <div
@@ -109,16 +129,12 @@ const NftListHeader = ({ onModalApply, collection }: NftListHeaderProps) => {
           />
           <p
             className={tw`
-            flex flex-row items-center
-            ml-[16px]
-          `}
+              flex flex-row items-center
+              ml-[16px] hover:cursor-pointer
+            `}
+            onClick={handleSortToggleClick}
           >
-            <Image
-              src={'/sort-icon.svg'}
-              alt={'sort'}
-              width={16}
-              height={16}
-            ></Image>
+            {data.order ? <BsSortDownAlt /> : <BsSortDown />}
             <span
               className={tw`
               text-[14px]
@@ -127,7 +143,7 @@ const NftListHeader = ({ onModalApply, collection }: NftListHeaderProps) => {
               ml-[4px]
             `}
             >
-              Lowest Price
+              Sort by Price
             </span>
           </p>
         </div>

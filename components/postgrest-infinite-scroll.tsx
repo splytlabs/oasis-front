@@ -24,15 +24,14 @@ export default function PostgrestInfiniteScroll(
   const fetchMore = async () => {
     const offset = data.items.length;
     const limit = props.fetchLimit;
-    const query = getQueryString(filter, offset, limit);
-
+    const query = getQueryString(filter, offset, limit, data.order);
     if (fetchQuery.current === query) {
       return;
     }
     fetchQuery.previous = fetchQuery.current;
     fetchQuery.current = query;
     try {
-      const newItems = await fetch(filter, offset, limit);
+      const newItems = await fetch(filter, offset, limit, data.order);
       const totalCount = offset + newItems.length;
       if (totalCount === data.totalCount) {
         setHasMore(false);
