@@ -3,10 +3,8 @@ import type {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
 } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import { tw } from 'twind';
-import AppHeader from 'components/app-header';
 import runPostgrestQuery from 'lib/run-postgrest-query';
 import Img from 'components/img';
 import React, { useState } from 'react';
@@ -15,6 +13,8 @@ import { MdExpandLess, MdExpandMore } from 'react-icons/md';
 import { GrStatusInfo } from 'react-icons/gr';
 import { BsNut, BsClock } from 'react-icons/bs';
 import { BiDetail } from 'react-icons/bi';
+import MainContainer from '../components/layout/main-container';
+import HeadTag from '../components/head-tag';
 
 type PageProps = {
   rentalInfo: { [key: string]: string };
@@ -25,21 +25,13 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
 
   return (
     <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Game NFT Search Demo</title>
-      </Head>
-      <main
-        id={'main'}
-        className={tw`
-          w-[100%] h-[100%]
-          absolute top-0 left-0
-          overflow-scroll
-          flex flex-col items-center
-        `}
-      >
-        <AppHeader></AppHeader>
+      <HeadTag
+        title={'The Oasis'}
+        url={'splyt.fi'}
+        description={'Nft Rental Marketplace'}
+        imageUrl={'/splyt-logo'}
+      />
+      <MainContainer>
         <div
           className={tw`
             flex flex-row justify-center p-12 gap-8 flex-wrap
@@ -57,7 +49,7 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
             {JSON.stringify(isValid ? rentalInfo : 'Not Found', null, 2)}
           </pre>
         </div> */}
-      </main>
+      </MainContainer>
     </>
   );
 };

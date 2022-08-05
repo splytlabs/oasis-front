@@ -1,13 +1,12 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { tw } from 'twind';
-import AppHeader from 'components/app-header';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
-import { Modals } from '../hooks/useModal';
 import NftListHeader from '../components/nft-list-header';
+import MainContainer from '../components/layout/main-container';
+import HeadTag from '../components/head-tag';
 
 const queryHead = '/rest/v1/rental_infos_view?select=';
 
@@ -26,24 +25,13 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Game NFT Search Demo</title>
-      </Head>
-      <main
-        id={'main'}
-        className={tw`
-        w-[100%] h-[100%]
-        absolute top-0 left-0
-        overflow-scroll
-        flex flex-col items-center`}
-      >
-        <AppHeader>
-          <div className={tw`font-bold text-accent px-4`}>Rent</div>
-          <div className={tw`border-l-1 w-auto h-4 border-primary-300`}></div>
-          <div className={tw`font-bold text-primary-500 px-4`}>Lend</div>
-        </AppHeader>
+      <HeadTag
+        title={'The Oasis'}
+        url={'splyt.fi'}
+        description={'Nft Rental Marketplace'}
+        imageUrl={'/splyt-logo'}
+      />
+      <MainContainer>
         <div
           className={tw`
             w-full max-w-[1440px]
@@ -87,8 +75,7 @@ const Home: NextPage = () => {
             <div className={tw`w-[${cardWidth}px]`}></div>
           </PostgrestInfiniteScroll>
         </div>
-      </main>
-      <Modals />
+      </MainContainer>
     </>
   );
 };
