@@ -7,6 +7,7 @@ export default {
       },
       gridTemplateColumns: {
         auto: 'repeat(auto-fill, minmax(220px, 1fr))',
+        'auto-280': 'repeat(auto-fill, minmax(220px, 280px))',
       },
       colors: {
         // 아래의 주소에서 컬러 팔레트 만들 수 있음
