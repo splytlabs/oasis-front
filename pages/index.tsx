@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         <div
           className={tw`
             w-full max-w-[1440px]
-            px-[20px]
+            px-[20px] mt-[66px]
           `}
         >
           <NftListHeader
