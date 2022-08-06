@@ -4,34 +4,40 @@ import MainContainer from '../../components/layout/main-container';
 import { tw } from 'twind';
 import Image from 'next/image';
 import { css } from 'twind/css';
+import Link from 'next/link';
 
-type CollectionData = {
+interface CollectionData {
+  slug: string;
   title: string;
   backgroundImg: string;
   logo: string;
   active: boolean;
-};
+}
 
 const COLLECTION_DATA: CollectionData[] = [
   {
+    slug: 'derby-stars',
     title: 'Derby Stars',
     backgroundImg: '/derby-bg.png',
     logo: '/derby-logo.png',
     active: true,
   },
   {
+    slug: 'stepn',
     title: 'StepN',
     backgroundImg: '/stepn-bg.png',
     logo: '/stepn-logo.png',
     active: true,
   },
   {
+    slug: '',
     title: 'Coming Soon',
     backgroundImg: '',
     logo: '/splyt-logo.svg',
     active: false,
   },
   {
+    slug: '',
     title: 'Coming Soon',
     backgroundImg: '',
     logo: '/splyt-logo.svg',
@@ -68,11 +74,13 @@ const Collection: NextPage = () => {
 export default Collection;
 
 const CollectionItem = ({
+  slug,
   title,
   backgroundImg,
   logo,
   active = true,
 }: CollectionData) => {
+  console.log('active', active);
   const style = css`
     position: relative;
     height: 340px;
@@ -111,33 +119,18 @@ const CollectionItem = ({
     }
   `;
 
-  const inActiveStyle = css`
-    &:before {
-      content: '';
-      background-color: black;
-      background-size: cover;
-      opacity: 0.8;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-
-      border-radius: 12px;
-    }
-  `;
-
   return (
-    <div className={`${tw(style)} ${active ? tw(inActiveStyle) : ''}`}>
-      <Image
-        src={logo}
-        alt={'collection-logo'}
-        width={120}
-        height={120}
-        style={{ borderRadius: '120px' }}
-      />
-      <p>{title}</p>
-    </div>
+    <Link href={`collection/${slug}`}>
+      <a className={tw(style)}>
+        <Image
+          src={logo}
+          alt={'collection-logo'}
+          width={120}
+          height={120}
+          style={{ borderRadius: '120px' }}
+        />
+        <p>{title}</p>
+      </a>
+    </Link>
   );
 };

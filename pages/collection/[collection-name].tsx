@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetServerSidePropsResult } from 'next';
 import { tw } from 'twind';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
-import NftListHeader from '../components/nft-list-header';
-import MainContainer from '../components/layout/main-container';
-import HeadTag from '../components/head-tag';
 import { useFilter, FilterState, copyFilterState } from 'hooks/useFilter';
 import { useQuery } from 'hooks/useQuery';
+import HeadTag from '../../components/head-tag';
+import MainContainer from '../../components/layout/main-container';
+import NftListHeader from '../../components/nft-list-header';
 
 const Home: NextPage = () => {
   const { data, getQueryString, clearQueryData } = useQuery();
@@ -145,3 +145,11 @@ function NFTCardContent({
 }
 
 export default Home;
+
+export function getServerSideProps(): GetServerSidePropsResult<
+  Record<string, unknown>
+> {
+  return {
+    props: {},
+  };
+}
