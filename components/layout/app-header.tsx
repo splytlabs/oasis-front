@@ -1,6 +1,7 @@
 import { tw } from 'twind';
 import Img from 'components/img';
 import WalletConnectButton from '../wallet-connect-button';
+import Link from 'next/link';
 
 export type AppHeaderProps = {
   className?: string;
@@ -17,7 +18,11 @@ export default function AppHeader(props: AppHeaderProps) {
         sticky top-0 shadow-lg
       `}
     >
-      <Img src="/splyt-logo.svg" />
+      <Link href={'/'} passHref>
+        <a>
+          <Img src="/splyt-logo.svg" />
+        </a>
+      </Link>
       <div className={tw`flex-1 h-16`}></div>
       <div className={tw`font-bold text-accent px-4`}>Rent</div>
       <div className={tw`border-l-1 w-auto h-4 border-primary-300`}></div>
