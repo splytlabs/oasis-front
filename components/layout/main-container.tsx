@@ -9,17 +9,19 @@ type MainContainerProps = {
 
 const MainContainer = ({ children }: MainContainerProps) => {
   return (
-    <main
-      className={tw`
+    <>
+      <AppHeader></AppHeader>
+      <main
+        className={tw`
         w-[100%] h-[100%]
         absolute top-0 left-0
         overflow-scroll
         flex flex-col items-center`}
-    >
-      <AppHeader></AppHeader>
-      {children}
+      >
+        {children}
+      </main>
       <Modals></Modals>
-    </main>
+    </>
   );
 };
 
