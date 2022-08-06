@@ -43,6 +43,20 @@ const COLLECTION_DATA: CollectionData[] = [
     logo: '/splyt-logo.svg',
     active: false,
   },
+  {
+    slug: '',
+    title: 'Coming Soon',
+    backgroundImg: '',
+    logo: '/splyt-logo.svg',
+    active: false,
+  },
+  {
+    slug: '',
+    title: 'Coming Soon',
+    backgroundImg: '',
+    logo: '/splyt-logo.svg',
+    active: false,
+  },
 ];
 
 const Collection: NextPage = () => {
@@ -63,6 +77,9 @@ const Collection: NextPage = () => {
           `}
         >
           {COLLECTION_DATA.map((data, index) => {
+            if (!data.active) {
+              return <InActiveCollectionItem key={index} {...data} />;
+            }
             return <CollectionItem key={index} {...data} />;
           })}
         </div>
@@ -78,9 +95,7 @@ const CollectionItem = ({
   title,
   backgroundImg,
   logo,
-  active = true,
 }: CollectionData) => {
-  console.log('active', active);
   const style = css`
     position: relative;
     height: 340px;
@@ -132,5 +147,73 @@ const CollectionItem = ({
         <p>{title}</p>
       </a>
     </Link>
+  );
+};
+
+const InActiveCollectionItem = ({ logo, title }: CollectionData) => {
+  const style = css`
+    position: relative;
+    height: 340px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    cursor: default;
+
+    &:before {
+      content: '';
+      background-color: black;
+      background-size: cover;
+      opacity: 0.7;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      border-radius: 12px;
+    }
+
+    div {
+      width: 100%;
+      height: 48px;
+      border-radius: 0 0 12px 12px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #eaebee;
+
+      position: absolute;
+      bottom: 0;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 38px;
+
+      color: #000000;
+    }
+  `;
+
+  return (
+    <div className={tw(style)}>
+      <Image
+        src={logo}
+        alt={'collection-logo'}
+        width={120}
+        height={120}
+        style={{ borderRadius: '120px' }}
+      />
+      <div>
+        <p>{title}</p>
+      </div>
+    </div>
   );
 };
