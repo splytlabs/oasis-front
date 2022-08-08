@@ -34,5 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-/zx/temp.mjs
+/zx/temp.*
 /zx/*.tmp.*

@@ -1,7 +1,7 @@
 // 주의!!! 내부 스크립트 안에서만 사용하세요
 const { Client } = require('pg');
 
-const sql = async function (query) {
+export default async function sql(query: string) {
   // prettier-ignore
   const client = new Client({
     host     : 'db.ltfdhwvztsqsskvggemu.supabase.co',
@@ -17,6 +17,4 @@ const sql = async function (query) {
   } finally {
     await client.end();
   }
-};
-
-export default sql;
+}
