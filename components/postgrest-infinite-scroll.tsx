@@ -1,12 +1,11 @@
 import { tw } from 'twind';
-import { useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { InView } from 'react-intersection-observer';
 import Img from 'components/img';
 import { useQuery } from 'hooks/useQuery';
-import type { FilterState } from 'hooks/useFilter';
+import { useFilter } from 'hooks/useFilter';
 
 export type PostgrestInfiniteScrollProps = {
-  appliedFilter: FilterState;
   fetchLimit: number;
   onRenderItem: (item: unknown, index: number) => React.ReactNode;
   className?: string;
@@ -16,33 +15,29 @@ export type PostgrestInfiniteScrollProps = {
 export default function PostgrestInfiniteScroll(
   props: PostgrestInfiniteScrollProps
 ) {
-  const filter = props.appliedFilter;
   const { data, fetch, getQueryString } = useQuery();
+  const { filter } = useFilter();
   const [fetchQuery] = useState({ current: '', previous: '' });
-  const [hasMore, setHasMore] = useState(true);
 
-  const fetchMore = async () => {
+  const currentQueryString = useRef('');
+
+  const fetchMore = useCallback(async () => {
     const offset = data.items.length;
     const limit = props.fetchLimit;
-    const query = getQueryString(filter, offset, limit, data.order);
-    if (fetchQuery.current === query) {
-      return;
-    }
-    fetchQuery.previous = fetchQuery.current;
-    fetchQuery.current = query;
+    const order = data.order;
+    const newQueryString = getQueryString(filter, offset, limit, order);
+
+    if (currentQueryString.current === newQueryString) return;
+    currentQueryString.current = newQueryString;
+
     try {
-      const newItems = await fetch(filter, offset, limit, data.order);
-      const totalCount = offset + newItems.length;
-      if (totalCount === data.totalCount) {
-        setHasMore(false);
-      }
+      await fetch(filter, offset, limit, order);
     } catch (error) {
       console.error(error);
-      fetchQuery.current = fetchQuery.previous;
     }
-  };
+  }, [data, filter, props.fetchLimit, fetch, getQueryString]);
 
-  const noSearchResult = fetchQuery.current && !data.items.length && !hasMore;
+  const noSearchResult = fetchQuery.current && !data.items.length;
 
   return (
     <div className={tw`${props.className}`}>

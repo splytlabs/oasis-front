@@ -3,31 +3,13 @@ import { tw } from 'twind';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
 import Image from 'next/image';
-import { useState, useRef } from 'react';
-import { useFilter, FilterState, copyFilterState } from 'hooks/useFilter';
-import { useQuery } from 'hooks/useQuery';
+import { useRef } from 'react';
 import HeadTag from '../../components/head-tag';
 import MainContainer from '../../components/layout/main-container';
 import NftListHeader from '../../components/nft-list-header';
 
 const Home: NextPage = () => {
-  const { data, getQueryString, clearQueryData } = useQuery();
-  const { filter } = useFilter();
-  const [appliedFilter, setAppliedFilter] = useState(copyFilterState(filter));
   const fetchLimit = 20;
-
-  const handleApplySearchQuery = (current: FilterState) => {
-    const offset = data.items.length;
-    const order = data.order;
-    const query = getQueryString(current, offset, fetchLimit, order);
-    console.info('Updated Query:', query);
-    setAppliedFilter(copyFilterState(current));
-  };
-
-  const handleOrderChange = () => {
-    setAppliedFilter(copyFilterState(appliedFilter));
-    clearQueryData();
-  };
 
   return (
     <>
@@ -46,11 +28,8 @@ const Home: NextPage = () => {
         >
           <NftListHeader
             collection={{ name: 'Derby Stars', imgUrl: '/derby-logo.png' }}
-            onModalApply={handleApplySearchQuery}
-            onOrderChange={handleOrderChange}
           />
           <PostgrestInfiniteScroll
-            appliedFilter={appliedFilter}
             fetchLimit={fetchLimit}
             className={tw`
               w-full

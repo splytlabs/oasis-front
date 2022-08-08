@@ -5,24 +5,16 @@ import { useModals } from '../hooks/useModal';
 import SearchModal from './modals/search-modal';
 import { useQuery } from '../hooks/useQuery';
 import Image from 'next/image';
-import type { FilterState } from 'hooks/useFilter';
 import { BsSortDown, BsSortDownAlt } from 'react-icons/bs';
-import { useEffect } from 'react';
 
 type NftListHeaderProps = {
   collection: {
     name: string;
     imgUrl: string;
   };
-  onModalApply: (filter: FilterState) => void;
-  onOrderChange: (order: string) => void;
 };
 
-const NftListHeader = ({
-  collection,
-  onModalApply,
-  onOrderChange,
-}: NftListHeaderProps) => {
+const NftListHeader = ({ collection }: NftListHeaderProps) => {
   const { data, setOrder } = useQuery();
   const { openModal } = useModals();
 
@@ -33,11 +25,6 @@ const NftListHeader = ({
       setOrder('price.asc.nullslast');
     }
   };
-
-  useEffect(() => {
-    onOrderChange(data.order ?? '');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data.order]);
 
   return (
     <div
@@ -124,9 +111,7 @@ const NftListHeader = ({
           >
             {data.totalCount.toLocaleString()} items
           </p>
-          <FilterButton
-            onClick={() => openModal(SearchModal, { onApply: onModalApply })}
-          />
+          <FilterButton onClick={() => openModal(SearchModal, {})} />
           <p
             className={tw`
               flex flex-row items-center
