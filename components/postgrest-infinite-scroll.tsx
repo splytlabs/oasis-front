@@ -1,5 +1,5 @@
 import { tw } from 'twind';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 import Img from 'components/img';
 import { useQuery } from 'hooks/useQuery';
@@ -41,12 +41,6 @@ export default function PostgrestInfiniteScroll(
       fetchQuery.current = fetchQuery.previous;
     }
   };
-
-  useEffect(() => {
-    if (data.items.length === 0) {
-      void fetchMore();
-    }
-  });
 
   const noSearchResult = fetchQuery.current && !data.items.length && !hasMore;
 

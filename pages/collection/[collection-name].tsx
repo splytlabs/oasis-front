@@ -22,7 +22,6 @@ const Home: NextPage = () => {
     const query = getQueryString(current, offset, fetchLimit, order);
     console.info('Updated Query:', query);
     setAppliedFilter(copyFilterState(current));
-    clearQueryData();
   };
 
   const handleOrderChange = () => {

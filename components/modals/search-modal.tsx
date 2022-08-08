@@ -21,7 +21,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
   const [tabName, setTabName] = useState<TabName>('Properties');
   const { filter, resetFilter } = useFilter();
   const modal = useRef<HTMLDivElement>(null);
-  const { data } = useQuery();
+  const { data, clearQueryData } = useQuery();
 
   const handleReset = () => {
     resetFilter('properties');
@@ -108,6 +108,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose, onApply }) => {
               text-white font-bold w-24 h-10
             `}
               onClick={() => {
+                clearQueryData();
                 onApply?.(filter);
                 onClose();
               }}
