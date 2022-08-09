@@ -3,7 +3,6 @@ import type {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
 } from 'next';
-import Image from 'next/image';
 import { tw } from 'twind';
 import runPostgrestQuery from 'lib/run-postgrest-query';
 import Img from 'components/img';
@@ -13,22 +12,22 @@ import { MdExpandLess, MdExpandMore } from 'react-icons/md';
 import { GrStatusInfo } from 'react-icons/gr';
 import { BsNut, BsClock } from 'react-icons/bs';
 import { BiDetail } from 'react-icons/bi';
-import MainContainer from '../components/layout/main-container';
-import HeadTag from '../components/head-tag';
+import MainContainer from 'components/layout/main-container';
+import HeadTag from 'components/head-tag';
 
 type PageProps = {
   rentalInfo: { [key: string]: string };
 };
 
-const Page: NextPage<PageProps> = ({ rentalInfo }) => {
-  // const isValid = rentalInfo.contract_address && rentalInfo.token_id;
+const VIEW_NAME = 'derbystars_rental_infos_view';
 
+const Page: NextPage<PageProps> = ({ rentalInfo }) => {
   return (
     <>
       <HeadTag
         title={'The Oasis'}
         url={'splyt.fi'}
-        description={'Nft Rental Marketplace'}
+        description={'NFT Rental Marketplace'}
         imageUrl={'/splyt-logo'}
       />
       <MainContainer>
@@ -40,15 +39,6 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
           <LeftSide rentalInfo={rentalInfo} />
           <RightSide rentalInfo={rentalInfo} />
         </div>
-        {/* <div
-          className={tw`
-            font-bold text-sm text-primary-800 mt-12 mb-4
-          `}
-        >
-          <pre>
-            {JSON.stringify(isValid ? rentalInfo : 'Not Found', null, 2)}
-          </pre>
-        </div> */}
       </MainContainer>
     </>
   );
@@ -58,13 +48,7 @@ export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsResult<PageProps>> {
   const key = (context.query['nft-unique-key'] ?? '') as string;
-  const [contractAddress, tokenId] = key.split('@');
-  const query = [
-    `rest/v1/rental_infos_view?select=*`,
-    `contract_address=eq.${contractAddress ?? ''}`,
-    `token_id=eq.${tokenId ?? ''}`,
-  ].join('&');
-  // console.log('query', query);
+  const query = `rest/v1/${VIEW_NAME}?select=*&token_uid=eq.${key}`;
   const { items } = await runPostgrestQuery(query);
   return {
     props: { rentalInfo: (items[0] as { [key: string]: string }) ?? {} },
@@ -202,7 +186,7 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
   const daysMin = Number(rentalInfo.days_min) || 1;
   const daysMax = Number(rentalInfo.days_max) || 1;
   const [period, setPeriod] = useState(daysMin);
-  const price = Number(rentalInfo.price) / 10_000_000;
+  const price = Number(rentalInfo.price) / 1_000_000;
   const handlePeriodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value.replaceAll(/[^0-9]/g, ''));
     setPeriod(value);
@@ -254,23 +238,27 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
         <div className={tw`font-bold text-sm text-primary-700 mr-4`}>
           Rental Price
         </div>
-        <Image
-          src="/polygon-icon.png"
-          alt="polygon-icon"
-          width={14}
-          height={14}
-        ></Image>
+        <div
+          className={tw`
+            flex justify-center items-center
+            bg-accent rounded-full w-[18px] h-[18px] p-[3px]
+          `}
+        >
+          <Img src="/polygon-icon.svg"></Img>
+        </div>
         <div className={tw`text-xs text-primary-500 ml-1`}>
           {price.toFixed(2)}/Day
         </div>
       </div>
       <div className={tw`flex flex-row items-center mb-4`}>
-        <Image
-          src="/polygon-icon.png"
-          alt="polygon-icon"
-          width={32}
-          height={32}
-        ></Image>
+        <div
+          className={tw`
+            flex justify-center items-center
+            bg-accent rounded-full w-[32px] h-[32px] p-[6px]
+          `}
+        >
+          <Img src="/polygon-icon.svg"></Img>
+        </div>
         <div className={tw`font-bold text-3xl text-primary-900 ml-2`}>
           {(price * period).toFixed(2)}
         </div>

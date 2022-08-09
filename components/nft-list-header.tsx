@@ -1,8 +1,7 @@
 import { tw } from 'twind';
 import IconButton from './icon-button';
 import FilterButton from './filterbutton';
-import { useModals } from '../hooks/useModal';
-import SearchModal from './modals/search-modal';
+import { useModals, ModalComponent } from '../hooks/useModal';
 import { useQuery } from '../hooks/useQuery';
 import Image from 'next/image';
 import { BsSortDown, BsSortDownAlt } from 'react-icons/bs';
@@ -12,9 +11,10 @@ type NftListHeaderProps = {
     name: string;
     imgUrl: string;
   };
+  searchModal: ModalComponent;
 };
 
-const NftListHeader = ({ collection }: NftListHeaderProps) => {
+const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
   const { data, setOrder } = useQuery();
   const { openModal } = useModals();
 
@@ -111,7 +111,7 @@ const NftListHeader = ({ collection }: NftListHeaderProps) => {
           >
             {data.totalCount.toLocaleString()} items
           </p>
-          <FilterButton onClick={() => openModal(SearchModal, {})} />
+          <FilterButton onClick={() => openModal(searchModal, {})} />
           <p
             className={tw`
               flex flex-row items-center

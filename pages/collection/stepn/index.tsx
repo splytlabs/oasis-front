@@ -2,21 +2,30 @@ import type { NextPage, GetServerSidePropsResult } from 'next';
 import { tw } from 'twind';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
-import Image from 'next/image';
-import { useRef } from 'react';
-import HeadTag from '../../components/head-tag';
-import MainContainer from '../../components/layout/main-container';
-import NftListHeader from '../../components/nft-list-header';
+import Img from 'components/img';
+import { useEffect, useRef } from 'react';
+import HeadTag from 'components/head-tag';
+import MainContainer from 'components/layout/main-container';
+import NftListHeader from 'components/nft-list-header';
+import { useQuery } from 'hooks/useQuery';
+import SearchModal from 'components/modals/stepn-search-modal';
 
 const Home: NextPage = () => {
+  const detailsBaseURL = '/collection/stepn/';
   const fetchLimit = 20;
+  const { setViewName } = useQuery();
+
+  useEffect(() => {
+    setViewName('stepn_rental_infos_view');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
       <HeadTag
         title={'The Oasis'}
         url={'splyt.fi'}
-        description={'Nft Rental Marketplace'}
+        description={'NFT Rental Marketplace'}
         imageUrl={'/splyt-logo'}
       />
       <MainContainer>
@@ -27,7 +36,8 @@ const Home: NextPage = () => {
           `}
         >
           <NftListHeader
-            collection={{ name: 'Derby Stars', imgUrl: '/derby-logo.png' }}
+            collection={{ name: 'StepN', imgUrl: '/stepn-logo.png' }}
+            searchModal={SearchModal}
           />
           <PostgrestInfiniteScroll
             fetchLimit={fetchLimit}
@@ -44,8 +54,8 @@ const Home: NextPage = () => {
                   image={row.image ?? ''}
                 >
                   <NFTCardContent
-                    contractAddress={row.contract_address ?? ''}
-                    tokenId={row.token_id ?? ''}
+                    baseURL={detailsBaseURL}
+                    nftUniqueKey={row.token_uid ?? ''}
                     daysMin={Number(row.days_min)}
                     daysMax={Number(row.days_max)}
                     price={Number(row.price)}
@@ -61,16 +71,16 @@ const Home: NextPage = () => {
 };
 
 type NFTCardContentProps = {
-  contractAddress: string;
-  tokenId: string;
+  baseURL: string;
+  nftUniqueKey: string;
   daysMin: number;
   daysMax: number;
   price: number;
 };
 
 function NFTCardContent({
-  contractAddress,
-  tokenId,
+  baseURL,
+  nftUniqueKey,
   daysMin,
   daysMax,
   price,
@@ -102,18 +112,13 @@ function NFTCardContent({
         <a
           ref={aRef}
           className={tw`hidden`}
-          href={`/${contractAddress}@${tokenId}`}
+          href={`${baseURL}${nftUniqueKey}`}
           target="_blank"
           rel="noopener noreferrer"
         ></a>
-        <Image
-          src="/polygon-icon.png"
-          alt="polygon-icon"
-          width={24}
-          height={24}
-        ></Image>
+        <Img className={tw`w-[24px] h-[24px]`} src="/solana-icon.svg"></Img>
         <div className={tw`font-bold text-2xl pl-1 pr-[1px]`}>
-          {`${Math.floor(price / 10_000_000)}`}
+          {`${Math.floor(price / 1_000_000)}`}
         </div>
         <div className={tw`font-bold text-lg relative top-[1px]`}>/Day</div>
       </button>

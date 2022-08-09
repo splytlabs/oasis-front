@@ -18,7 +18,7 @@ export default function AppHeader(props: AppHeaderProps) {
         sticky top-0 shadow-lg
       `}
     >
-      <Link href={'/'} passHref>
+      <Link href={'/collection'} passHref>
         <a>
           <Img src="/splyt-logo.svg" />
         </a>

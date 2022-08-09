@@ -16,7 +16,7 @@ interface CollectionData {
 
 const COLLECTION_DATA: CollectionData[] = [
   {
-    slug: 'derby-stars',
+    slug: 'derbystars',
     title: 'Derby Stars',
     backgroundImg: '/derby-bg.png',
     logo: '/derby-logo.png',
@@ -73,7 +73,8 @@ const Collection: NextPage = () => {
           className={tw`
             w-[100%]
             px-[10%] mt-[122px]
-            grid grid grid-cols-auto-280 gap-10
+            grid grid-cols-auto-280 gap-10
+            justify-center
           `}
         >
           {COLLECTION_DATA.map((data, index) => {

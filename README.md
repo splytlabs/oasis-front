@@ -1,3 +1,3 @@
 ## game-nft-search-demo
 
-* WORK IN PROGRESS
+- WORK IN PROGRESS

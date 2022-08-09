@@ -1,10 +1,9 @@
-import type { TabName } from 'components/modals/search-modal';
 import { useFilter } from '../hooks/useFilter';
 import { tw } from 'twind';
 import { css } from 'twind/css';
 
 interface NftSearchPanelCategoryProps {
-  name: TabName;
+  name: string;
 }
 
 const style = css`

@@ -22,16 +22,21 @@ export default function PostgrestInfiniteScroll(
   const currentQueryString = useRef('');
 
   const fetchMore = useCallback(async () => {
-    const offset = data.items.length;
-    const limit = props.fetchLimit;
-    const order = data.order;
-    const newQueryString = getQueryString(filter, offset, limit, order);
+    const options = {
+      viewName: data.viewName,
+      filter,
+      offset: data.items.length,
+      limit: props.fetchLimit,
+      order: data.order ?? '',
+    };
+    const newQueryString = getQueryString(options);
 
-    if (currentQueryString.current === newQueryString) return;
+    if (currentQueryString.current === newQueryString) {
+      return;
+    }
     currentQueryString.current = newQueryString;
-
     try {
-      await fetch(filter, offset, limit, order);
+      await fetch(options);
     } catch (error) {
       console.error(error);
     }

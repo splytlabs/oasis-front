@@ -12,53 +12,50 @@ import React, {
 import { debounce } from 'lodash';
 
 type DataState = {
+  viewName: string;
+  order?: string;
+  expectedTotalCount?: number;
   items: unknown[];
   totalCount: number;
-  order: string;
-  expectedTotalCount?: number;
+};
+
+type QueryOptions = {
+  viewName: string;
+  filter: FilterState;
+  offset?: number;
+  limit?: number;
+  order?: string;
 };
 
 const QueryDispatchContext = createContext<{
-  fetch: (
-    filter: FilterState,
-    offset?: number,
-    limit?: number,
-    order?: string
-  ) => Promise<unknown[]>;
-  fetchAndClearPrevious: (
-    filter: FilterState,
-    order?: string,
-    limit?: number
-  ) => Promise<unknown[]>;
-  getQueryString: (
-    filter: FilterState,
-    offset?: number,
-    limit?: number,
-    order?: string
-  ) => string;
+  setViewName: (name: string) => void;
+  getQueryString: (options: QueryOptions) => string;
+  fetch: (options: QueryOptions) => Promise<unknown[]>;
+  fetchAndClearPrevious: (options: QueryOptions) => Promise<unknown[]>;
   setOrder: (order: string) => void;
 }>({
-  // eslint-disable-next-line @typescript-eslint/require-await
-  fetch: async () => [],
+  setViewName: () => undefined,
   getQueryString: () => '',
-  // eslint-disable-next-line @typescript-eslint/require-await
-  fetchAndClearPrevious: async () => [],
+  fetch: () => Promise.resolve([]),
+  fetchAndClearPrevious: () => Promise.resolve([]),
   setOrder: () => undefined,
 });
 
 const QueryStateContext = createContext<DataState>({
+  viewName: '',
+  order: '',
   items: [],
   totalCount: 0,
-  order: '',
 });
 
-const getFilterQuery = (
-  filter: FilterState,
-  offset?: number,
-  limit?: number,
-  order?: string
-) => {
-  const head = 'rest/v1/rental_infos_view?select=*';
+const getFilterQuery = ({
+  viewName,
+  filter,
+  offset,
+  limit,
+  order,
+}: QueryOptions) => {
+  const head = `rest/v1/${viewName}?select=*`;
   const body = [...filter.values()].reduce((filterString, map) => {
     return filterString + [...map.values()].filter((x) => x).join('&');
   }, '');
@@ -78,60 +75,45 @@ export const QueryProvider: React.FC<{
   children: ReactElement[] | ReactElement;
 }> = ({ children }) => {
   const [data, setData] = useState<DataState>({
+    viewName: '',
+    order: '',
     items: [],
     totalCount: 0,
-    order: '',
   });
-  const { filter } = useFilter();
+  const { filter, resetAllFilter } = useFilter();
 
-  const fetch = useCallback(
-    async (
-      filter: FilterState,
-      offset?: number,
-      limit?: number,
-      order?: string
-    ) => {
-      const query = getFilterQuery(filter, offset, limit, order);
-      const result = await runPostgrestQuery(query, {
-        count: 'exact',
-      });
-      setData((prev) => {
-        return {
-          ...prev,
-          items: [...prev.items, ...result.items],
-          totalCount: result.totalCount || 0,
-        };
-      });
-      return result.items;
-    },
-    []
-  );
+  const fetch = useCallback(async (options: QueryOptions) => {
+    const query = getFilterQuery(options);
+    const result = await runPostgrestQuery(query, { count: 'exact' });
+    setData((prev) => {
+      return {
+        ...prev,
+        items: [...prev.items, ...result.items],
+        totalCount: result.totalCount || 0,
+      };
+    });
+    return result.items;
+  }, []);
 
-  const fetchAndClearPrevious = useCallback(
-    async (filter: FilterState, order?: string, limit?: number) => {
-      const query = getFilterQuery(filter, 0, limit, order);
-      const result = await runPostgrestQuery(query, {
-        count: 'exact',
-      });
-
-      setData((prev) => {
-        return {
-          ...prev,
-          order: order ?? prev.order,
-          items: [...result.items],
-          totalCount: result.totalCount || 0,
-        };
-      });
-      return result.items;
-    },
-    []
-  );
+  const fetchAndClearPrevious = useCallback(async (options: QueryOptions) => {
+    const query = getFilterQuery(options);
+    const result = await runPostgrestQuery(query, { count: 'exact' });
+    setData((prev) => {
+      return {
+        ...prev,
+        order: options.order ?? prev.order ?? '',
+        items: [...result.items],
+        totalCount: result.totalCount || 0,
+      };
+    });
+    return result.items;
+  }, []);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchCount = useCallback(
-    debounce(async (filter: FilterState) => {
+    debounce(async (options: QueryOptions) => {
       try {
-        const query = getFilterQuery(filter);
+        const query = getFilterQuery(options);
         const result = await runPostgrestQuery(query, {
           count: 'exact',
           method: 'HEAD',
@@ -151,24 +133,38 @@ export const QueryProvider: React.FC<{
   );
 
   useEffect(() => {
-    void fetchCount(filter);
+    void fetchCount({ viewName: data.viewName, filter });
   }, [filter]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const setViewName = useCallback((name: string) => {
+    setData({ viewName: name, items: [], totalCount: 0 });
+  }, []);
+
+  useEffect(() => {
+    if (data.viewName === 'derbystars_rental_infos_view') {
+      resetAllFilter();
+    } else {
+      filter.clear();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.viewName]);
 
   const setOrder = useCallback(
     (order: string) => {
-      void fetchAndClearPrevious(filter, order);
+      void fetchAndClearPrevious({ viewName: data.viewName, filter, order });
     },
-    [fetchAndClearPrevious, filter]
+    [fetchAndClearPrevious, data.viewName, filter]
   );
 
   const dispatch = useMemo(
     () => ({
-      fetch,
+      setViewName,
       getQueryString: getFilterQuery,
-      setOrder,
+      fetch,
       fetchAndClearPrevious,
+      setOrder,
     }),
-    [fetch, setOrder, fetchAndClearPrevious]
+    [setViewName, fetch, fetchAndClearPrevious, setOrder]
   );
 
   return (
@@ -182,14 +178,10 @@ export const QueryProvider: React.FC<{
 
 export const useQuery = () => {
   const data = useContext(QueryStateContext);
-  const { fetch, getQueryString, fetchAndClearPrevious, setOrder } =
-    useContext(QueryDispatchContext);
+  const dispatch = useContext(QueryDispatchContext);
 
   return {
     data,
-    fetch,
-    getQueryString,
-    fetchAndClearPrevious,
-    setOrder,
+    ...dispatch,
   };
 };

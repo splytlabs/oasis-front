@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ModalComponent = React.FC<any>;
+export type ModalComponent<T = any> = React.FC<T>;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ModalOpenDispatcher = (Component: ModalComponent, props: any) => void;
 type ModalCloseDispatcher = (Component: ModalComponent) => void;

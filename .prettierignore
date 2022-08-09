@@ -3,3 +3,4 @@ coverage
 node_modules
 public
 pnpm-lock.yaml
+zx/data/*

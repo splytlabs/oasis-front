@@ -7,7 +7,8 @@ import NftSearchPanelCategory from '../nft-search-panel-category';
 import IconButton from '../icon-button';
 import { CgClose } from 'react-icons/cg';
 import { getTrackBackground, Range } from 'react-range';
-import { useQuery } from '../../hooks/useQuery';
+import { useQuery } from 'hooks/useQuery';
+import type { ModalComponent } from 'hooks/useModal';
 
 interface SearchModalProps {
   onClose: () => void;
@@ -15,7 +16,7 @@ interface SearchModalProps {
 
 export type TabName = 'Basic' | 'Appearance' | 'Properties';
 
-const SearchModal: React.FC<SearchModalProps> = ({ onClose }) => {
+const SearchModal: ModalComponent<SearchModalProps> = ({ onClose }) => {
   const tabNames = ['Basic', 'Appearance', 'Properties'] as TabName[];
   const [tabName, setTabName] = useState<TabName>('Properties');
   const { filter, resetFilter } = useFilter();
@@ -97,7 +98,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose }) => {
               className={tw`
               font-bold text-primary-400`}
             >
-              {(data.expectedTotalCount ?? data.totalCount).toLocaleString()}{' '}
+              {(data.expectedTotalCount ?? data.totalCount).toLocaleString()}
               items
             </p>
             <button
@@ -107,7 +108,11 @@ const SearchModal: React.FC<SearchModalProps> = ({ onClose }) => {
               text-white font-bold w-24 h-10
             `}
               onClick={() => {
-                void fetchAndClearPrevious(filter, data.order);
+                void fetchAndClearPrevious({
+                  viewName: data.viewName,
+                  filter,
+                  order: data.order ?? '',
+                });
                 onClose();
               }}
             >

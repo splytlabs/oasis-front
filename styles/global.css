@@ -6,6 +6,6 @@ html body {
 
   width: 100%;
   overflow: hidden;
-  overscroll-behavior : contain;
+  overscroll-behavior: contain;
   touch-action: none;
 }

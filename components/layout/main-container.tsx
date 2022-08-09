@@ -15,6 +15,7 @@ const MainContainer = ({ children }: MainContainerProps) => {
         className={tw`
         w-[100%] h-[100%]
         absolute top-0 left-0
+        box-border pt-16
         overflow-scroll
         flex flex-col items-center`}
       >
