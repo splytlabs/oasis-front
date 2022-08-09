@@ -70,7 +70,7 @@ async function insertRentalInfos(rawData: Record<string, unknown>[]) {
       owner: info.owner,
       days_min: price > 5 ? 1 : price > 2 ? 3 : 7,
       days_max: price > 5 ? 7 : price > 2 ? 14 : 28,
-      price: price * 1_000_000,
+      price: Math.round(price * 1_000_000),
     };
     rows.push(row);
   }
@@ -104,32 +104,32 @@ function createDDL() {
     CREATE TABLE ${nftInfos}
     (
       id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
-      token_uid character varying NOT NULL,
-      image character varying NOT NULL,
-      name character varying NOT NULL,
-      "Sneaker type" character varying,
-      "Sneaker quality" character varying,
+      token_uid varchar NOT NULL,
+      image varchar NOT NULL,
+      name varchar NOT NULL,
+      "Sneaker type" varchar,
+      "Sneaker quality" varchar,
       "Level" integer NOT NULL,
       "Optimal Speed" numrange,
-      "Shoe-minting Count" character varying,
+      "Shoe-minting Count" varchar,
       "Efficiency" numeric,
       "Luck" numeric,
       "Comfortability" numeric,
       "Resilience" numeric,
-      "Durability" character varying,
-      "Socket 1" character varying,
-      "Socket 2" character varying,
-      "Socket 3" character varying,
-      "Socket 4" character varying,
-      "Badge" character varying,
+      "Durability" varchar,
+      "Socket 1" varchar,
+      "Socket 2" varchar,
+      "Socket 3" varchar,
+      "Socket 4" varchar,
+      "Badge" varchar,
       CONSTRAINT ${nftInfos}_pkey PRIMARY KEY (id),
       CONSTRAINT ${rentalInfos}_token_uid_key UNIQUE (token_uid)
     );
     CREATE TABLE ${rentalInfos}
     (
       id bigint NOT NULL GENERATED ALWAYS AS IDENTITY,
-      token_uid character varying NOT NULL,
-      owner character varying NOT NULL,
+      token_uid varchar NOT NULL,
+      owner varchar NOT NULL,
       days_min integer NOT NULL,
       days_max integer NOT NULL,
       price bigint NOT NULL,
@@ -140,7 +140,11 @@ function createDDL() {
     ${createTablePolicy(nftInfos)}
     ${createTablePolicy(rentalInfos)}
     CREATE OR REPLACE VIEW ${rentalInfos}_view
-    AS SELECT ${nftInfos}.*
+    AS SELECT ${nftInfos}.*,
+      ${rentalInfos}.owner,
+      ${rentalInfos}.days_min,
+      ${rentalInfos}.days_max,
+      ${rentalInfos}.price
     FROM ${nftInfos} LEFT JOIN ${rentalInfos}
     ON ${nftInfos}.token_uid = ${rentalInfos}.token_uid;
   `;
