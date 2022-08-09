@@ -4,6 +4,9 @@ import 'zx/globals';
 import { LCDClient } from '@terra-money/terra.js';
 import axios from 'axios';
 
+$.verbose = false;
+const jsonPath = `${__dirname}/data/derbystars-nft-infos.tmp.json`;
+
 axios.defaults.timeout = 60000;
 
 void (async function () {
@@ -27,7 +30,7 @@ void (async function () {
     } while (tokenIds.length >= limit);
 
     console.log('NFT-Infos -> nft-infos.json');
-    await fs.writeJSON(`${__dirname}/nft-infos.json`, nftInfos, { spaces: 2 });
+    await fs.writeJSON(jsonPath, nftInfos, { spaces: 2 });
     console.log(`All NFT-Infos collected.`);
   } catch (error) {
     if (axios.isAxiosError(error)) {

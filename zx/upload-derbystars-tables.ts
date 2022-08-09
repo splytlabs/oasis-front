@@ -1,16 +1,11 @@
 #!/usr/bin/env -S pnpm ts-node
 // @ts-nocheck
 import 'zx/globals';
-import { createClient } from '@supabase/supabase-js';
+import supabase from './lib/supabase';
 import { exit } from 'process';
 
 $.verbose = false;
-
-const SUPABASE_URL = 'https://ltfdhwvztsqsskvggemu.supabase.co';
-const SUPABASE_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0ZmRod3Z6dHNxc3NrdmdnZW11Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY1Nzk3NTUwOCwiZXhwIjoxOTczNTUxNTA4fQ.0KD12T1nZuAjxa9kKO3zBw_mZEGEAPrnkiYZD_2vcJ8';
-const client = createClient(SUPABASE_URL, SUPABASE_KEY);
-const jsonPath = `${__dirname}/nft-infos-10027.json`;
+const jsonPath = `${__dirname}/data/derbystars-nft-infos.json`;
 
 void (async function () {
   await insertRows('nft_infos', await loadRowsFromJSON(jsonPath));
@@ -22,7 +17,7 @@ async function insertRows(tableName, rows, chunkSize = 100) {
   console.log(`insertRows(${tableName}) started !!`);
   for (let i = 0; i < rows.length; i += chunkSize) {
     const chunk = rows.slice(i, i + chunkSize);
-    const result = await client.from(tableName).insert(chunk).then();
+    const result = await supabase.from(tableName).insert(chunk).then();
     console.log(
       `[${i} - ${i + chunk.length}] insert result:`,
       result.statusText
