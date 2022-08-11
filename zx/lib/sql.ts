@@ -8,7 +8,7 @@ export default async function sql(query: string) {
     database : 'postgres',
     port     : 5432,
     user     : 'postgres',
-    password : 'gTFOyEZaCwZS3O5o',
+    password : '********',
   });
 
   await client.connect();

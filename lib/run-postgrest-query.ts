@@ -2,7 +2,7 @@ import { fetch } from 'cross-fetch';
 
 const SUPABASE_URL = 'https://ltfdhwvztsqsskvggemu.supabase.co';
 const SUPABASE_ANON_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0ZmRod3Z6dHNxc3NrdmdnZW11Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTc5NzU1MDgsImV4cCI6MTk3MzU1MTUwOH0.nvrndu77J1HyW16IlWTWTGSJDAwfXd_jzBgTersXA5U';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0ZmRod3Z6dHNxc3NrdmdnZW11Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjAyMzI2NDgsImV4cCI6MTk3NTgwODY0OH0.qM1XQLQfS27OakUjhq5Jbzj0Gl3q3Fxxx5tpAX3XX10';
 
 export type RunPostgrestQueryOptions = {
   endpointURL?: string | undefined;
