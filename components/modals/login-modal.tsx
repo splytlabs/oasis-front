@@ -108,8 +108,9 @@ const WalletItem = ({ name, closeModal }: WalletItemProps) => {
         p-[12px]
         border
         mt-[-1px]
+        cursor-pointer
       `}
-      onClick={void connectWallet}
+      onClick={() => void connectWallet()}
     >
       <span
         className={tw`
