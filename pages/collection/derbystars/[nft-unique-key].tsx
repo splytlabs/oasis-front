@@ -26,7 +26,7 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
   return (
     <>
       <HeadTag
-        title={'The Oasis'}
+        title={'The SPLYT Marketplace'}
         url={'splyt.fi'}
         description={'NFT Rental Marketplace'}
         imageUrl={'/splyt-logo'}
