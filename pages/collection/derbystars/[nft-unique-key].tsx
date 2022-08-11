@@ -14,6 +14,7 @@ import { BsNut, BsClock } from 'react-icons/bs';
 import { BiDetail } from 'react-icons/bi';
 import MainContainer from 'components/layout/main-container';
 import HeadTag from 'components/head-tag';
+import { useMetaMask } from 'metamask-react';
 
 type PageProps = {
   rentalInfo: { [key: string]: string };
@@ -48,7 +49,7 @@ export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsResult<PageProps>> {
   const key = (context.query['nft-unique-key'] ?? '') as string;
-  const query = `rest/v1/${VIEW_NAME}?select=*&token_uid=eq.${key}`;
+  const query = `rest/v1/${VIEW_NAME}?select=*&token_uid=eq.terra${key}`;
   const { items } = await runPostgrestQuery(query);
   return {
     props: { rentalInfo: (items[0] as { [key: string]: string }) ?? {} },
@@ -195,6 +196,9 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
     setPeriod(Math.min(Math.max(period, daysMin), daysMax));
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const { status, ethereum } = useMetaMask();
+
   return (
     <div
       className={tw`
@@ -269,6 +273,36 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
           font-bold text-white text-lg focus:outline-none
         `}
         onMouseOver={clampPeriod}
+        onClick={() => {
+          if (status === 'connected') {
+            const p = price * 10 ** 18;
+            const hex = '0x' + p.toString(16);
+
+            const transactionParameters = {
+              nonce: '0x00', // ignored by MetaMask
+              to: '0xBD9eae8B04B1bE8eD92A2b29d8924958DB93Ac22', // Required except during contract publications.
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
+              from: ethereum.selectedAddress, // must match user's active address.
+              value: hex, // Only required to send ether to the recipient from the initiating external account.
+            };
+
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+            ethereum
+              .request({
+                method: 'eth_sendTransaction',
+                params: [transactionParameters],
+              })
+              .then((result: any) => {
+                // The result varies by RPC method.
+                // For example, this method will return a transaction hash hexadecimal string on success.
+                console.log(result);
+              })
+              .catch((error: any) => {
+                // If the request fails, the Promise will reject with an error.
+                console.error(error);
+              });
+          }
+        }}
       >
         Rent
       </button>

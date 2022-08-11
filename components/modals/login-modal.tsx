@@ -88,12 +88,13 @@ type WalletItemProps = {
 };
 
 const WalletItem = ({ name, closeModal }: WalletItemProps) => {
-  const { status, connect } = useMetaMask();
+  const { status, connect, switchChain } = useMetaMask();
 
   const connectWallet = async () => {
     if (status === 'notConnected') {
       const result = await connect();
       if (result) {
+        await switchChain('0x89');
         closeModal();
       }
       return;

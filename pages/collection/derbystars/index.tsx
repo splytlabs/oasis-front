@@ -112,7 +112,7 @@ function NFTCardContent({
         <a
           ref={aRef}
           className={tw`hidden`}
-          href={`${baseURL}${nftUniqueKey}`}
+          href={`${baseURL}${nftUniqueKey.slice(5)}`}
           target="_blank"
           rel="noopener noreferrer"
         ></a>
