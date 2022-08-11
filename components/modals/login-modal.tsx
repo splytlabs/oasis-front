@@ -90,6 +90,16 @@ type WalletItemProps = {
 const WalletItem = ({ name, closeModal }: WalletItemProps) => {
   const { status, connect } = useMetaMask();
 
+  const connectWallet = async () => {
+    if (status === 'notConnected') {
+      const result = await connect();
+      if (result) {
+        closeModal();
+      }
+      return;
+    }
+  };
+
   return (
     <ul
       className={tw`
@@ -99,16 +109,7 @@ const WalletItem = ({ name, closeModal }: WalletItemProps) => {
         border
         mt-[-1px]
       `}
-      onClick={async () => {
-        console.log('status', status);
-        if (status === 'notConnected') {
-          const result = await connect();
-          if (result) {
-            closeModal();
-          }
-          console.log('result', result);
-        }
-      }}
+      onClick={void connectWallet}
     >
       <span
         className={tw`
