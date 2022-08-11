@@ -2,6 +2,9 @@ import { tw } from 'twind';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useModals } from '../hooks/useModal';
 import LoginModal from './modals/login-modal';
+import { useMetaMask } from 'metamask-react';
+import Image from 'next/image';
+import React from 'react';
 
 export type WalletConnectButtonProps = {
   children?: React.ReactNode;
@@ -10,6 +13,7 @@ export type WalletConnectButtonProps = {
 export default function WalletConnectButton({
   children,
 }: WalletConnectButtonProps) {
+  const { status, account } = useMetaMask();
   const { openModal } = useModals();
 
   return (
@@ -19,7 +23,9 @@ export default function WalletConnectButton({
         bg-accent focus:outline-none
       `}
       onClick={() => {
-        openModal(LoginModal, {});
+        if (status === 'notConnected') {
+          openModal(LoginModal, {});
+        }
       }}
     >
       {children ?? (
@@ -28,7 +34,26 @@ export default function WalletConnectButton({
             font-bold text-white px-2 flex flex-row items-center gap-1
           `}
         >
-          <AiOutlineUser className={tw`text-2xl`} /> Wallet
+          {status === 'notConnected' ? (
+            <span
+              className={tw`
+                flex items-center
+                mr-[6px]
+            `}
+            >
+              <Image
+                src={'/wallet-icon-white.svg'}
+                alt={'wallet'}
+                width={30}
+                height={30}
+              />
+            </span>
+          ) : (
+            <AiOutlineUser className={tw`text-2xl`} />
+          )}
+          {status && account
+            ? `${account.slice(0, 3)}...${account.slice(-3)}`
+            : 'Wallet'}
         </div>
       )}
     </button>

@@ -5,16 +5,19 @@ import { FilterProvider } from '../hooks/useFilter';
 import { ModalProvider } from '../hooks/useModal';
 import '../styles/global.css';
 import { QueryProvider } from '../hooks/useQuery';
+import { MetaMaskProvider } from 'metamask-react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <FilterProvider>
-      <QueryProvider>
-        <ModalProvider>
-          <Component {...pageProps} />
-        </ModalProvider>
-      </QueryProvider>
-    </FilterProvider>
+    <MetaMaskProvider>
+      <FilterProvider>
+        <QueryProvider>
+          <ModalProvider>
+            <Component {...pageProps} />
+          </ModalProvider>
+        </QueryProvider>
+      </FilterProvider>
+    </MetaMaskProvider>
   );
 }
 
