@@ -1,4 +1,5 @@
 // 주의!!! 내부 스크립트 안에서만 사용하세요
+import './supabase.env';
 const { Client } = require('pg');
 
 export default async function sql(query: string) {
@@ -8,7 +9,7 @@ export default async function sql(query: string) {
     database : 'postgres',
     port     : 5432,
     user     : 'postgres',
-    password : '********',
+    password : process.env.SUPABASE_DB_PW ?? '',
   });
 
   await client.connect();
