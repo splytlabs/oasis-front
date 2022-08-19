@@ -22,13 +22,13 @@ const COLLECTION_DATA: CollectionData[] = [
     logo: '/derby-logo.png',
     active: true,
   },
-  // {
-  //   slug: 'stepn',
-  //   title: 'StepN',
-  //   backgroundImg: '/stepn-bg.png',
-  //   logo: '/stepn-logo.png',
-  //   active: true,
-  // },
+  {
+    slug: 'stepn',
+    title: 'StepN',
+    backgroundImg: '/stepn-bg.png',
+    logo: '/stepn-logo.png',
+    active: true,
+  },
   {
     slug: '',
     title: 'Coming Soon',

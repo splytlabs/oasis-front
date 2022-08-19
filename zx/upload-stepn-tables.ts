@@ -46,6 +46,14 @@ async function insertNFTInfos(rawData: Record<string, unknown>[]) {
       if (attr.trait_type === 'Optimal Speed') {
         const [min, max] = value.replace('km/h', '').split('-');
         value = `[${min}, ${max}]`;
+      } else if (attr.trait_type === 'Sneaker quality') {
+        const quality = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'];
+        const index = quality.findIndex((x) => x === value);
+        value = `${index < 0 ? 0 : index}`;
+      } else if (attr.trait_type === 'Shoe-minting Count') {
+        value = value.split('/')[0] ?? '0';
+      } else if (attr.trait_type === 'Durability') {
+        value = value.split('/')[0] ?? '0';
       }
       attrs[attr.trait_type] = value;
     });
@@ -107,16 +115,16 @@ function createDDL() {
       token_uid varchar NOT NULL,
       image varchar NOT NULL,
       name varchar NOT NULL,
-      "Sneaker type" varchar,
-      "Sneaker quality" varchar,
+      "Sneaker type" varchar NOT NULL,
+      "Sneaker quality" integer NOT NULL,
       "Level" integer NOT NULL,
-      "Optimal Speed" numrange,
-      "Shoe-minting Count" varchar,
-      "Efficiency" numeric,
-      "Luck" numeric,
-      "Comfortability" numeric,
-      "Resilience" numeric,
-      "Durability" varchar,
+      "Optimal Speed" numrange NOT NULL,
+      "Shoe-minting Count" integer NOT NULL,
+      "Efficiency" numeric NOT NULL,
+      "Luck" numeric NOT NULL,
+      "Comfortability" numeric NOT NULL,
+      "Resilience" numeric NOT NULL,
+      "Durability" integer NOT NULL,
       "Socket 1" varchar,
       "Socket 2" varchar,
       "Socket 3" varchar,

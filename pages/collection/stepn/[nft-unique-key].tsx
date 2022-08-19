@@ -327,13 +327,64 @@ function TabGroup({ startTabName, tabs }: TabGroupProps) {
   );
 }
 
-function StepnStatsTab({ rentalInfo: _ }: PageProps) {
+function StepnStatsTab({ rentalInfo }: PageProps) {
+  const statNames = [
+    'Sneaker type',
+    'Sneaker quality',
+    'Optimal Speed',
+    'Level',
+    'Shoe-minting Count',
+    'Efficiency',
+    'Luck',
+    'Comfortability',
+    'Resilience',
+    'Durability',
+  ];
+
+  const getStatValue = (statName: string) => {
+    const v = rentalInfo[statName] ?? '';
+    if (statName === 'Sneaker quality') {
+      const i = Number(v);
+      return ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary'][i];
+    }
+    if (statName === 'Optimal Speed') {
+      const range = v.match(/[[(,][0-9.]+/g)?.map((x) => x.substring(1)) ?? [];
+      return `${range[0] ?? '1.0'}~${range[1] ?? '20.0'} km/h`;
+    }
+    if (statName === 'Shoe-minting Count') {
+      return `${v}/7`;
+    }
+    if (statName === 'Durability') {
+      return `${v}/100`;
+    }
+    return v;
+  };
+
   return (
     <div
       className={tw`
-        w-full h-[600px] bg-primary-50 rounded-lg flex flex-col p-4 gap-6
+        w-full bg-primary-50 rounded-lg flex flex-col p-4 gap-6
       `}
-    ></div>
+    >
+      {statNames.map((name) => {
+        return (
+          rentalInfo[name] != null && (
+            <div
+              key={name}
+              className={tw`
+                flex flex-row items-center p-2 gap-1
+              `}
+            >
+              <div className={tw`font-bold text(primary-900 lg)`}>{name}</div>
+              <div className={tw`flex-1`}></div>
+              <div className={tw`font-bold text(primary-700 sm)`}>
+                {getStatValue(name)}
+              </div>
+            </div>
+          )
+        );
+      })}
+    </div>
   );
 }
 

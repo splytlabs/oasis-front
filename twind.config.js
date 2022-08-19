@@ -1,5 +1,10 @@
 /** @type {import('twind').Configuration} */
 export default {
+  preflight: {
+    input: {
+      accentColor: '#4C67F4',
+    },
+  },
   theme: {
     extend: {
       screens: {

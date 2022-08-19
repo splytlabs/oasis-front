@@ -71,9 +71,13 @@ export const FilterProvider: React.FC<{
     setFilter((filter) => {
       const newFilter = copyFilterState(filter);
 
-      if (newFilter.get(category)?.has(name)) {
-        newFilter.get(category)?.set(name, value);
+      if (!newFilter.has(category)) {
+        newFilter.set(category, new Map<string, string>());
       }
+
+      // if (newFilter.get(category)?.has(name)) {
+      newFilter.get(category)?.set(name, value);
+      // }
 
       return newFilter;
     });
@@ -133,14 +137,17 @@ export const useFilter = () => {
     resetAll();
   }, [resetAll]);
 
-  const getFilterQuery = useCallback(() => {
-    const head = '/rest/v1/rental_infos_view?select=*';
-    const body = [...filter.values()].reduce((filterString, map) => {
-      return filterString + [...map.values()].filter((x) => x).join('&');
-    }, '');
+  const getFilterQuery = useCallback(
+    (viewName: string) => {
+      const head = `/rest/v1/${viewName || 'rental_infos_view'}?select=*`;
+      const body = [...filter.values()].reduce((filterString, map) => {
+        return filterString + [...map.values()].filter((x) => x).join('&');
+      }, '');
 
-    return `${head}${!body ? '' : `&${body}`}`;
-  }, [filter]);
+      return `${head}${!body ? '' : `&${body}`}`;
+    },
+    [filter]
+  );
 
   const getFilterCount = useCallback(
     (category: string) => {
