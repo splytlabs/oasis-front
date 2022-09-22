@@ -23,18 +23,11 @@ const COLLECTION_DATA: CollectionData[] = [
     active: true,
   },
   {
-    slug: 'stepn',
-    title: 'StepN',
-    backgroundImg: '/stepn-bg.png',
-    logo: '/stepn-logo.png',
+    slug: 'snkrz',
+    title: 'SNKRZ',
+    backgroundImg: '/snkrz-bg.png',
+    logo: '/snkrz-logo.png',
     active: true,
-  },
-  {
-    slug: '',
-    title: 'Coming Soon',
-    backgroundImg: '',
-    logo: '/splyt-logo.svg',
-    active: false,
   },
   {
     slug: '',

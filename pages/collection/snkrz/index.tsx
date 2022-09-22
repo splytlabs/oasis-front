@@ -8,21 +8,33 @@ import HeadTag from 'components/head-tag';
 import MainContainer from 'components/layout/main-container';
 import NftListHeader from 'components/nft-list-header';
 import { useQuery } from 'hooks/useQuery';
-import SearchModal from 'components/modals/derbystars-search-modal';
-import { POLYGON_CHAIN_ID } from 'types';
+import SearchModal from 'components/modals/stepn-search-modal';
 import { useMetaMask } from 'metamask-react';
 
+const klaytnTestnet = {
+    chainId: "0x3e9",
+    chainName: "Klaytn Baobab",
+    rpcUrls: ["https://api.baobab.klaytn.net:8651/"],
+    nativeCurrency: {
+      name: "KLAY",
+      symbol: "KLAY",
+      decimals: 18,
+    },
+    blockExplorerUrls: ["https://baobab.scope.klaytn.com/"]
+  };
+
+
 const Home: NextPage = () => {
-  const detailsBaseURL = '/collection/derbystars/';
+  const detailsBaseURL = '/collection/stepn/';
   const fetchLimit = 20;
   const { setViewName } = useQuery();
-  const { status, switchChain } = useMetaMask();
+  const { status, addChain } = useMetaMask();
 
   useEffect(() => {
-    setViewName('derbystars_rental_infos_view');
+    setViewName('stepn_rental_infos_view');
     
     if (status === 'connected') {
-      void switchChain(POLYGON_CHAIN_ID);
+      void addChain(klaytnTestnet)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -30,7 +42,7 @@ const Home: NextPage = () => {
   return (
     <>
       <HeadTag
-        title={'The SPLYT Marketplace'}
+        title={'The Oasis'}
         url={'splyt.fi'}
         description={'NFT Rental Marketplace'}
         imageUrl={'/splyt-logo'}
@@ -43,7 +55,7 @@ const Home: NextPage = () => {
           `}
         >
           <NftListHeader
-            collection={{ name: 'Derby Stars', imgUrl: '/derby-logo.png' }}
+            collection={{ name: 'StepN', imgUrl: '/stepn-logo.png' }}
             searchModal={SearchModal}
           />
           <PostgrestInfiniteScroll
@@ -119,11 +131,11 @@ function NFTCardContent({
         <a
           ref={aRef}
           className={tw`hidden`}
-          href={`${baseURL}${nftUniqueKey.slice(5)}`}
+          href={`${baseURL}${nftUniqueKey}`}
           target="_blank"
           rel="noopener noreferrer"
         ></a>
-        <Img className={tw`w-[24px] h-[24px]`} src="/polygon-icon.svg"></Img>
+        <Img className={tw`w-[24px] h-[24px]`} src="/solana-icon.svg"></Img>
         <div className={tw`font-bold text-2xl pl-1 pr-[1px]`}>
           {`${Math.floor(price / 1_000_000)}`}
         </div>

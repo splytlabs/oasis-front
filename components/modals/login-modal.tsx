@@ -74,7 +74,6 @@ const LoginModal: React.FC<LoginModalProps> = ({ onClose }) => {
           `}
           >
             <WalletItem name={'Metamask'} closeModal={onClose} />
-            <WalletItem name={'Phantom'} closeModal={onClose} />
           </li>
         </div>
       </div>
