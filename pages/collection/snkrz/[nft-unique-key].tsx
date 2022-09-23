@@ -19,7 +19,7 @@ type PageProps = {
   rentalInfo: { [key: string]: string };
 };
 
-const VIEW_NAME = 'stepn_rental_infos_view';
+const VIEW_NAME = 'snkrz_rental_infos_view';
 
 const Page: NextPage<PageProps> = ({ rentalInfo }) => {
   return (
@@ -28,7 +28,7 @@ const Page: NextPage<PageProps> = ({ rentalInfo }) => {
         title={'The Oasis'}
         url={'splyt.fi'}
         description={'Nft Rental Marketplace'}
-        imageUrl={'/splyt-logo'}
+        imageUrl={'/snkrz-logo'}
       />
       <MainContainer>
         <div
@@ -76,7 +76,7 @@ function LeftSide({ rentalInfo }: PageProps) {
     <div className={tw`w-[360px] flex flex-col gap-4`}>
       <div className={tw`flex flex-row items-center`}>
         <div className={tw`flex flex-col`}>
-          <div className={tw`font-bold text-xs text-primary-900`}>StepN</div>
+          <div className={tw`font-bold text-xs text-primary-900`}>SNKRZ</div>
           <div className={tw`font-bold`}>{rentalInfo.name}</div>
         </div>
         <div className={tw`flex-1 self-stretch`} />
@@ -193,7 +193,7 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
   const daysMin = Number(rentalInfo.days_min) || 1;
   const daysMax = Number(rentalInfo.days_max) || 1;
   const [period, setPeriod] = useState(daysMin);
-  const price = Number(rentalInfo.price) / 1_000_000;
+  const price = Number(rentalInfo.price);
   const handlePeriodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value.replaceAll(/[^0-9]/g, ''));
     setPeriod(value);
@@ -243,31 +243,15 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
       </div>
       <div className={tw`flex flex-row items-center mt-6`}>
         <div className={tw`font-bold text-sm text-primary-700 mr-4`}>
-          Rental Price
-        </div>
-        <div
-          className={tw`
-            flex justify-center items-center
-            bg-accent rounded-full w-[18px] h-[18px] p-[3px]
-          `}
-        >
-          <Img src="/solana-icon.svg"></Img>
-        </div>
-        <div className={tw`text-xs text-primary-500 ml-1`}>
-          {price.toFixed(2)}/Day
+          Share Ratio
         </div>
       </div>
       <div className={tw`flex flex-row items-center mb-4`}>
-        <div
-          className={tw`
-            flex justify-center items-center
-            bg-accent rounded-full w-[32px] h-[32px] p-[6px]
-          `}
-        >
-          <Img src="/solana-icon.svg"></Img>
+        <div className={tw`font-bold text-xl text-primary-700 mr-2`}>
+          {`Player ${price}%`}
         </div>
-        <div className={tw`font-bold text-3xl text-primary-900 ml-2`}>
-          {(price * period).toFixed(2)}
+        <div className={tw`font-bold text-m text-primary-500`}>
+          {`Onwer ${100 - price}%`}
         </div>
       </div>
       <button
@@ -329,6 +313,7 @@ function TabGroup({ startTabName, tabs }: TabGroupProps) {
 
 function SnkrzStatsTab({ rentalInfo }: PageProps) {
   const statNames = [
+    'Rarity',
     'Level',
     'Fever',
     'Luck',

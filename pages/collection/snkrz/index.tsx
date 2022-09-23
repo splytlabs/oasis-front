@@ -2,7 +2,6 @@ import type { NextPage, GetServerSidePropsResult } from 'next';
 import { tw } from 'twind';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
-import Img from 'components/img';
 import { useEffect, useRef } from 'react';
 import HeadTag from 'components/head-tag';
 import MainContainer from 'components/layout/main-container';
@@ -25,13 +24,13 @@ const klaytnTestnet = {
 
 
 const Home: NextPage = () => {
-  const detailsBaseURL = '/collection/stepn/';
+  const detailsBaseURL = '/collection/snkrz/';
   const fetchLimit = 20;
   const { setViewName } = useQuery();
   const { status, addChain } = useMetaMask();
 
   useEffect(() => {
-    setViewName('stepn_rental_infos_view');
+    setViewName('snkrz_rental_infos_view');
     
     if (status === 'connected') {
       void addChain(klaytnTestnet)
@@ -55,7 +54,7 @@ const Home: NextPage = () => {
           `}
         >
           <NftListHeader
-            collection={{ name: 'StepN', imgUrl: '/stepn-logo.png' }}
+            collection={{ name: 'SNKRZ', imgUrl: '/snkrz-logo.png' }}
             searchModal={SearchModal}
           />
           <PostgrestInfiniteScroll
@@ -135,11 +134,9 @@ function NFTCardContent({
           target="_blank"
           rel="noopener noreferrer"
         ></a>
-        <Img className={tw`w-[24px] h-[24px]`} src="/solana-icon.svg"></Img>
         <div className={tw`font-bold text-2xl pl-1 pr-[1px]`}>
-          {`${Math.floor(price / 1_000_000)}`}
+          {`Earn ${price}%`}
         </div>
-        <div className={tw`font-bold text-lg relative top-[1px]`}>/Day</div>
       </button>
       <div className={tw`h-8`}></div>
     </>

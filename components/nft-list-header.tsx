@@ -128,7 +128,7 @@ const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
               ml-[4px]
             `}
             >
-              Sort by Price
+              {collection.name === 'SNKRZ' ? 'Sort by Ratio' : 'Sort by Price'}
             </span>
           </p>
         </div>

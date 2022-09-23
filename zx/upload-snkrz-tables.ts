@@ -82,7 +82,7 @@ async function insertRentalInfos(rawData: Record<string, unknown>[]) {
       owner: '1ca9peph7c20eqr9cns2vhn6sp6cp7vv4jnzjrc',
       days_min: 1,
       days_max: 7,
-      share_ratio: getRandomInt(30, 50),
+      price: getRandomInt(30, 50),
     };
     rows.push(row);
   }
@@ -136,7 +136,7 @@ function createDDL() {
       owner varchar NOT NULL,
       days_min integer NOT NULL,
       days_max integer NOT NULL,
-      share_ratio integer NOT NULL,
+      price integer NOT NULL,
       CONSTRAINT ${rentalInfos}_pkey PRIMARY KEY (id),
       CONSTRAINT ${rentalInfos}_token_uid_fkey
       FOREIGN KEY (token_uid) REFERENCES ${nftInfos} (token_uid)
@@ -148,7 +148,7 @@ function createDDL() {
       ${rentalInfos}.owner,
       ${rentalInfos}.days_min,
       ${rentalInfos}.days_max,
-      ${rentalInfos}.share_ratio
+      ${rentalInfos}.price
     FROM ${nftInfos} LEFT JOIN ${rentalInfos}
     ON ${nftInfos}.token_uid = ${rentalInfos}.token_uid;
   `;
