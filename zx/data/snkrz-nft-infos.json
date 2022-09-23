@@ -1,0 +1,4419 @@
+[
+  {
+    "name": "SNKRZ#1",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/1.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#2",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/2.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 29.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 56.6
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 8
+      },
+      {
+        "trait_type": "Exp",
+        "value": "5/56"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#3",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/3.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Luck",
+        "value": 3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#4",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/4.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.6
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#5",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/5.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#6",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/6.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 103.3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 23.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 12
+      },
+      {
+        "trait_type": "Exp",
+        "value": "49/70"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#7",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/7.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 320.9
+      },
+      {
+        "trait_type": "Luck",
+        "value": 3.6
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 100.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 50.3
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 30
+      },
+      {
+        "trait_type": "Exp",
+        "value": "24/130"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#8",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/8.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 2.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#9",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/9.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#10",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/10.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 52.1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.6
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 50.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 30.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 28.1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "1/63"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#11",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/11.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 115.1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 53.2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 49.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.4
+      },
+      {
+        "trait_type": "Fever",
+        "value": 59.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 26
+      },
+      {
+        "trait_type": "Exp",
+        "value": "3/116"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#12",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/12.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 3
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.7
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#13",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/13.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 3.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.7
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#14",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/14.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.6
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#15",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/15.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.4
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#16",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/16.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 72.5
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 30.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 5.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "1/63"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#17",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/17.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#18",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/18.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#19",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/19.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 2.1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#20",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/20.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#21",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/21.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#22",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/22.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 17
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 3
+      },
+      {
+        "trait_type": "Exp",
+        "value": "30/37"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#23",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/23.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.4
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#24",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/24.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 30.6
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 22.4
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "1/50"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#25",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/25.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#26",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/26.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 32.1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 27.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 11
+      },
+      {
+        "trait_type": "Exp",
+        "value": "69/52"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#27",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/27.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#28",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/28.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 51.5
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 32.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 26.3
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "5/63"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#29",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/29.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 61.1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.4
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.1
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 12
+      },
+      {
+        "trait_type": "Exp",
+        "value": "44/55"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#30",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/30.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#31",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/31.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.1
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.4
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#32",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/32.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.1
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#33",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/33.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#34",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/34.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.2
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#35",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/35.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#36",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/36.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#37",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/37.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 3
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#38",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/38.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 80.6
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 30.6
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 16.4
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 12
+      },
+      {
+        "trait_type": "Exp",
+        "value": "6/70"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#39",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/39.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Bolt, 8~15km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.5
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#40",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/40.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 7.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1.1
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 1
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/32"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#41",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/41.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.2
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.7
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#42",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/42.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 37.9
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 12.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.6
+      },
+      {
+        "trait_type": "Fever",
+        "value": 6.2
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "2/50"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#43",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/43.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.2
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#44",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/44.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 42.3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 11.4
+      },
+      {
+        "trait_type": "Quality",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Fever",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "3/50"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#45",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/45.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 100.7
+      },
+      {
+        "trait_type": "Luck",
+        "value": 4.6
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 60.7
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.7
+      },
+      {
+        "trait_type": "Fever",
+        "value": 40.2
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 19
+      },
+      {
+        "trait_type": "Exp",
+        "value": "197/180"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#46",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/46.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 16.7
+      },
+      {
+        "trait_type": "Luck",
+        "value": 4
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 8.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.9
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 2
+      },
+      {
+        "trait_type": "Exp",
+        "value": "1/36"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#47",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/47.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Walking, 1~6km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 20.8
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.8
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 21.5
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.3
+      },
+      {
+        "trait_type": "Fever",
+        "value": 12.2
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Tenacity,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 10
+      },
+      {
+        "trait_type": "Exp",
+        "value": "1/50"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#48",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/48.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 31.9
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.9
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 20.6
+      },
+      {
+        "trait_type": "Quality",
+        "value": 3.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 15
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 6
+      },
+      {
+        "trait_type": "Exp",
+        "value": "2/50"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#49",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/49.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "external_url": "https://www.thesnkrz.com/",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Rare"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Jogging, 4~10km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 160.8
+      },
+      {
+        "trait_type": "Luck",
+        "value": 5.3
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 50.2
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.5
+      },
+      {
+        "trait_type": "Fever",
+        "value": 25.5
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Fever,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 23
+      },
+      {
+        "trait_type": "Exp",
+        "value": "46/106"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "in-app"
+      }
+    ]
+  },
+  {
+    "name": "SNKRZ#50",
+    "symbol": "SNKRZ",
+    "image": "https://metadata.thesnkrz.io/box/50.png",
+    "description": "An NFT shoe of varying abilities, grades, and types is included with this shoe box. It is used in the SNKRZ app to motivate users to exercise outdoors.",
+    "attributes": [
+      {
+        "trait_type": "Rarity",
+        "value": "Normal"
+      },
+      {
+        "trait_type": "Mode",
+        "value": "Running, 6~12km/h"
+      },
+      {
+        "trait_type": "Performance",
+        "value": 3
+      },
+      {
+        "trait_type": "Luck",
+        "value": 1.4
+      },
+      {
+        "trait_type": "Tenacity",
+        "value": 1
+      },
+      {
+        "trait_type": "Quality",
+        "value": 2.9
+      },
+      {
+        "trait_type": "Fever",
+        "value": 1.7
+      },
+      {
+        "trait_type": "Boost",
+        "value": "null"
+      },
+      {
+        "trait_type": "Dubre Socket 1",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 2",
+        "value": "Quality,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 3",
+        "value": "Performance,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 4",
+        "value": "Luck,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 5",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Dubre Socket 6",
+        "value": "Locked,Locked,0"
+      },
+      {
+        "trait_type": "Level",
+        "value": 0
+      },
+      {
+        "trait_type": "Exp",
+        "value": "0/30"
+      },
+      {
+        "trait_type": "Durability",
+        "value": "100/100"
+      },
+      {
+        "trait_type": "Breeding Count",
+        "value": "0/5"
+      },
+      {
+        "trait_type": "Generation",
+        "value": "G0"
+      },
+      {
+        "trait_type": "Current Chain",
+        "value": "klaytn"
+      }
+    ]
+  }
+]

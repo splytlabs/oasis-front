@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { tw } from 'twind';
 import Image from 'next/image';
 import { useMetaMask } from 'metamask-react';
+import { KLAYTN_TESTNET_CHAIN_ID, POLYGON_CHAIN_ID } from 'types';
 
 interface LoginModalProps {
   onClose: () => void;
@@ -92,10 +93,14 @@ const WalletItem = ({ name, closeModal }: WalletItemProps) => {
   const connectWallet = async () => {
     if (status === 'notConnected') {
       const result = await connect();
-      if (result) {
-        await switchChain('0x89');
-        closeModal();
+      if (result && window) {
+        if (window.location.toString().includes('snkrz')) {
+          await switchChain(KLAYTN_TESTNET_CHAIN_ID);
+        } else {
+          await switchChain(POLYGON_CHAIN_ID);
+        }
       }
+      closeModal();
       return;
     }
   };
