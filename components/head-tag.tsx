@@ -7,7 +7,7 @@ type HeadTagProps = {
   imageUrl: string;
 };
 
-const HeadTag = ({ title, description, url, imageUrl }: HeadTagProps) => {
+const HeadTag = ({ title, description, url }: HeadTagProps) => {
   return (
     <Head>
       <title>{title}</title>
@@ -17,9 +17,9 @@ const HeadTag = ({ title, description, url, imageUrl }: HeadTagProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:site_name" content="Yozm" />
-      <meta property="og:locale" content="ko_KR" />
+      <meta property="og:image" content="/splyt-logo.svg" />
+      <meta property="og:site_name" content="SPLYT" />
+      <meta property="og:locale" content="es_ES" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
     </Head>
