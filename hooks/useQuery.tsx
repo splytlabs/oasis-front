@@ -64,7 +64,7 @@ const getFilterQuery = ({
 
   const queryParts = [
     filterString,
-    `order=${order || 'price.desc.nullslast'},id.desc.nullslast`,
+    `order=${order || 'payment.desc.nullslast'},id.desc.nullslast`,
     `limit=${limit ?? 20}`,
     `offset=${offset ?? 0}`,
   ];
@@ -89,7 +89,7 @@ export const QueryProvider: React.FC<{
       return {
         ...prev,
         items: [...prev.items, ...result.items],
-        totalCount: result.totalCount || 0,
+        totalCount: result.totalCount || prev.totalCount,
       };
     });
     return result.items;
@@ -103,7 +103,7 @@ export const QueryProvider: React.FC<{
         ...prev,
         order: options.order ?? prev.order ?? '',
         items: [...result.items],
-        totalCount: result.totalCount || 0,
+        totalCount: result.totalCount || prev.totalCount,
       };
     });
     return result.items;

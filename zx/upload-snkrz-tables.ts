@@ -76,7 +76,7 @@ function getRandomInt(min: number, max: number): number {
 async function insertRentalInfos(rawData: Record<string, unknown>[]) {
   const { rentalInfos } = tableNames();
   const rows = [] as unknown[];
-  for (const [i, info] of rawData.entries()) {
+  for (const [i, _] of rawData.entries()) {
     const row = {
       token_uid: i + 1,
       owner: '1ca9peph7c20eqr9cns2vhn6sp6cp7vv4jnzjrc',

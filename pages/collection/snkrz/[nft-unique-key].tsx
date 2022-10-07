@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import type {
   NextPage,
   GetServerSidePropsContext,
@@ -14,21 +16,28 @@ import { BsNut, BsClock } from 'react-icons/bs';
 import { BiDetail } from 'react-icons/bi';
 import MainContainer from 'components/layout/main-container';
 import HeadTag from 'components/head-tag';
+import { useRouter } from 'next/router';
+import { useMetaMask } from 'metamask-react';
+import { contractFactory } from 'lib/useContract';
+import { useModals } from 'hooks/useModal';
+import LoginModal from 'components/modals/login-modal';
+import TransactionModal from 'components/modals/transaction-modal';
+import { LocalStroage } from 'lib/localStroage';
 
 type PageProps = {
   rentalInfo: { [key: string]: string };
 };
 
-const VIEW_NAME = 'snkrz_rental_infos_view';
+const VIEW_NAME = 'snkrz_view';
 
 const Page: NextPage<PageProps> = ({ rentalInfo }) => {
   return (
     <>
       <HeadTag
-        title={'The Oasis'}
+        title={'The SPLYT Marketplace'}
         url={'splyt.fi'}
         description={'Nft Rental Marketplace'}
-        imageUrl={'/snkrz-logo'}
+        imageUrl={'/splyt-logo'}
       />
       <MainContainer>
         <div
@@ -190,16 +199,65 @@ function Collapsible({ header, children }: CollapsibleProps) {
 }
 
 function RentalRequestForm({ rentalInfo }: PageProps) {
-  const daysMin = Number(rentalInfo.days_min) || 1;
-  const daysMax = Number(rentalInfo.days_max) || 1;
+  function secondToDay(sec: number) {
+    return Math.round(sec / 60 / 24);
+  }
+  const daysMin = secondToDay(Number(rentalInfo.min_rent_duration) || 1);
+  const daysMax = secondToDay(Number(rentalInfo.max_rent_duration) || 1);
   const [period, setPeriod] = useState(daysMin);
-  const price = Number(rentalInfo.price);
+  const price = Number(rentalInfo.payment);
   const handlePeriodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(event.target.value.replaceAll(/[^0-9]/g, ''));
     setPeriod(value);
   };
   const clampPeriod = () => {
     setPeriod(Math.min(Math.max(period, daysMin), daysMax));
+  };
+
+  const router = useRouter();
+  const { status, ethereum, account } = useMetaMask();
+  const { openModal, closeModal } = useModals();
+
+  const rentClick = async () => {
+    if (status === 'connected') {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unnecessary-type-assertion
+      const contract = contractFactory(ethereum as any);
+
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+        openModal(TransactionModal, {});
+
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+        const tx = await contract.fulfillOrder(
+          '0x255A50bB2d6b0600C1b02ad2D9f53783006bAb4D',
+          rentalInfo.token_uid,
+          period * 24 * 60,
+          account
+        );
+
+        const data = {
+          name: rentalInfo.name ?? '',
+          collectionName: 'SNKRZ',
+          price,
+          image: rentalInfo.image ?? '',
+          endAt: Math.floor(Date.now() / 1000) + period * 24 * 60 * 60,
+        };
+
+        LocalStroage.setRentedItems(data);
+
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        await tx.wait();
+
+        closeModal(TransactionModal);
+
+        void router.push('/mypage');
+      } catch (e) {
+        console.log('error', e);
+        closeModal(TransactionModal);
+      }
+    } else {
+      openModal(LoginModal, {});
+    }
   };
 
   return (
@@ -243,15 +301,29 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
       </div>
       <div className={tw`flex flex-row items-center mt-6`}>
         <div className={tw`font-bold text-sm text-primary-700 mr-4`}>
-          Share Ratio
+          Rental Price
         </div>
+        <div
+          className={tw`
+            flex justify-center items-center
+            bg-accent rounded-full w-[18px] h-[18px] p-[3px]
+          `}
+        >
+          <Img src="/klay-icon.svg"></Img>
+        </div>
+        <div className={tw`text-xs text-primary-500 ml-1`}>{price}/Day</div>
       </div>
       <div className={tw`flex flex-row items-center mb-4`}>
-        <div className={tw`font-bold text-xl text-primary-700 mr-2`}>
-          {`Player ${price}%`}
+        <div
+          className={tw`
+            flex justify-center items-center
+            bg-accent rounded-full w-[32px] h-[32px] p-[6px]
+          `}
+        >
+          <Img src="/klay-icon.svg"></Img>
         </div>
-        <div className={tw`font-bold text-m text-primary-500`}>
-          {`Onwer ${100 - price}%`}
+        <div className={tw`font-bold text-3xl text-primary-900 ml-2`}>
+          {price * period}
         </div>
       </div>
       <button
@@ -260,6 +332,7 @@ function RentalRequestForm({ rentalInfo }: PageProps) {
           font-bold text-white text-lg focus:outline-none
         `}
         onMouseOver={clampPeriod}
+        onClick={rentClick}
       >
         Rent
       </button>

@@ -36,7 +36,11 @@ const Home: NextPage = () => {
           `}
         >
           <NftListHeader
-            collection={{ name: 'StepN', imgUrl: '/stepn-logo.png' }}
+            collection={{
+              name: 'StepN',
+              imgUrl: '/stepn-logo.png',
+              webUrl: '',
+            }}
             searchModal={SearchModal}
           />
           <PostgrestInfiniteScroll

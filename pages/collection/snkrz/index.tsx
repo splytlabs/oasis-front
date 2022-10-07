@@ -2,26 +2,36 @@ import type { NextPage, GetServerSidePropsResult } from 'next';
 import { tw } from 'twind';
 import PostgrestInfiniteScroll from 'components/postgrest-infinite-scroll';
 import NFTCard from 'components/nft-card';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import HeadTag from 'components/head-tag';
 import MainContainer from 'components/layout/main-container';
 import NftListHeader from 'components/nft-list-header';
 import { useQuery } from 'hooks/useQuery';
-import SearchModal from 'components/modals/stepn-search-modal';
+import SearchModal from 'components/modals/snkrz-search-modal';
 import { useMetaMask } from 'metamask-react';
+import Img from 'components/img';
+import { useRouter } from 'next/router';
 
 const klaytnTestnet = {
-    chainId: "0x3e9",
-    chainName: "Klaytn Baobab",
-    rpcUrls: ["https://api.baobab.klaytn.net:8651/"],
-    nativeCurrency: {
-      name: "KLAY",
-      symbol: "KLAY",
-      decimals: 18,
-    },
-    blockExplorerUrls: ["https://baobab.scope.klaytn.com/"]
-  };
+  chainId: '0x3e9',
 
+  chainName: 'Klaytn Baobab',
+  rpcUrls: ['https://api.baobab.klaytn.net:8651/'],
+  nativeCurrency: {
+    name: 'KLAY',
+    symbol: 'KLAY',
+    decimals: 18,
+  },
+  blockExplorerUrls: ['https://baobab.scope.klaytn.com/'],
+};
+
+function secondToDay(sec: number) {
+  return Math.round(sec / 60 / 24);
+}
+
+function currentTime() {
+  return Math.round(Date.now() / 1000);
+}
 
 const Home: NextPage = () => {
   const detailsBaseURL = '/collection/snkrz/';
@@ -30,10 +40,10 @@ const Home: NextPage = () => {
   const { status, addChain } = useMetaMask();
 
   useEffect(() => {
-    setViewName('snkrz_rental_infos_view');
-    
+    setViewName('snkrz_view');
+
     if (status === 'connected') {
-      void addChain(klaytnTestnet)
+      void addChain(klaytnTestnet);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -41,9 +51,9 @@ const Home: NextPage = () => {
   return (
     <>
       <HeadTag
-        title={'The Oasis'}
+        title={'The SPLYT Marketplace'}
         url={'splyt.fi'}
-        description={'NFT Rental Marketplace'}
+        description={'Nft Rental Marketplace'}
         imageUrl={'/splyt-logo'}
       />
       <MainContainer>
@@ -54,7 +64,13 @@ const Home: NextPage = () => {
           `}
         >
           <NftListHeader
-            collection={{ name: 'SNKRZ', imgUrl: '/snkrz-logo.png' }}
+            collection={{
+              name: 'SNKRZ',
+              imgUrl: '/snkrz-logo.png',
+              webUrl: 'http://www.thesnkrz.com/',
+              twitterUrl: 'https://www.twitter.com/theSNKRZ',
+              discordUrl: 'https://discord.gg/thesnkrz',
+            }}
             searchModal={SearchModal}
           />
           <PostgrestInfiniteScroll
@@ -65,18 +81,26 @@ const Home: NextPage = () => {
             `}
             onRenderItem={(item) => {
               const row = item as { [key: string]: string };
+
+              const isRented =
+                row.end_at !== undefined
+                  ? Number(row.end_at) > currentTime()
+                  : false;
+
               return (
                 <NFTCard
                   key={row.id}
                   name={row.name ?? ''}
                   image={row.image ?? ''}
+                  isRented={isRented}
                 >
                   <NFTCardContent
                     baseURL={detailsBaseURL}
                     nftUniqueKey={row.token_uid ?? ''}
-                    daysMin={Number(row.days_min)}
-                    daysMax={Number(row.days_max)}
-                    price={Number(row.price)}
+                    daysMin={secondToDay(Number(row.min_rent_duration))}
+                    daysMax={secondToDay(Number(row.max_rent_duration))}
+                    price={Number(row.payment)}
+                    isRented={isRented}
                   />
                 </NFTCard>
               );
@@ -94,6 +118,7 @@ type NFTCardContentProps = {
   daysMin: number;
   daysMax: number;
   price: number;
+  isRented: boolean;
 };
 
 function NFTCardContent({
@@ -102,10 +127,12 @@ function NFTCardContent({
   daysMin,
   daysMax,
   price,
+  isRented,
 }: NFTCardContentProps) {
-  const aRef = useRef<HTMLAnchorElement>(null);
+  const router = useRouter();
+
   const handleRentButtonClick = () => {
-    aRef.current?.click();
+    if (!isRented) void router.push(`${baseURL}${nftUniqueKey}`);
   };
 
   return (
@@ -120,24 +147,32 @@ function NFTCardContent({
           /Days
         </div>
       </div>
-      <button
-        className={tw`
+      {isRented ? (
+        <button
+          disabled
+          className={tw`
+          w-full h-12 rounded-full flex flex-row bg-primary-600
+          justify-center items-center text-white pr-2 cursor-not-allowed
+        `}
+        >
+          <div className={tw`font-bold text-lg relative top-[1px]`}>Rented</div>
+        </button>
+      ) : (
+        <button
+          className={tw`
           w-full h-12 bg-accent rounded-full flex flex-row
           justify-center items-center text-white pr-2
         `}
-        onClick={handleRentButtonClick}
-      >
-        <a
-          ref={aRef}
-          className={tw`hidden`}
-          href={`${baseURL}${nftUniqueKey}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
-        <div className={tw`font-bold text-2xl pl-1 pr-[1px]`}>
-          {`Earn ${price}%`}
-        </div>
-      </button>
+          onClick={handleRentButtonClick}
+        >
+          <Img className={tw`w-[24px] h-[24px]`} src="/klay-icon.svg"></Img>
+          <div
+            className={tw`font-bold text-2xl pl-1 pr-[1px]`}
+          >{`${price}`}</div>
+          <div className={tw`font-bold text-lg relative top-[1px]`}>/Day</div>
+        </button>
+      )}
+
       <div className={tw`h-8`}></div>
     </>
   );

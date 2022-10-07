@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     setViewName('derbystars_rental_infos_view');
-    
+
     if (status === 'connected') {
       void switchChain(POLYGON_CHAIN_ID);
     }
@@ -43,7 +43,11 @@ const Home: NextPage = () => {
           `}
         >
           <NftListHeader
-            collection={{ name: 'Derby Stars', imgUrl: '/derby-logo.png' }}
+            collection={{
+              name: 'Derby Stars',
+              imgUrl: '/derby-logo.png',
+              webUrl: '',
+            }}
             searchModal={SearchModal}
           />
           <PostgrestInfiniteScroll

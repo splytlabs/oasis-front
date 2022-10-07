@@ -19,8 +19,11 @@ export default function AppHeader(props: AppHeaderProps) {
       `}
     >
       <Link href={'/collection'} passHref>
-        <a>
+        <a className={tw`flex items-center`}>
           <Img src="/splyt-logo.svg" />
+          <span className={tw`text-3xl font-bold text-accent ml-[8px]`}>
+            SPLYT
+          </span>
         </a>
       </Link>
       <div className={tw`flex-1 h-16`}></div>

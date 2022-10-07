@@ -10,6 +10,9 @@ type NftListHeaderProps = {
   collection: {
     name: string;
     imgUrl: string;
+    webUrl: string;
+    discordUrl?: string;
+    twitterUrl?: string;
   };
   searchModal: ModalComponent;
 };
@@ -22,7 +25,7 @@ const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
     if (data.order) {
       setOrder('');
     } else {
-      setOrder('price.asc.nullslast');
+      setOrder('payment.asc.nullslast');
     }
   };
 
@@ -35,7 +38,7 @@ const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
     >
       <div
         className={tw`
-          w-[278px]
+          w-[320px]
           flex flex-row
         `}
       >
@@ -68,22 +71,41 @@ const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
             <IconButton
               icon={
                 <Image
-                  src={'/share-icon.svg'}
-                  alt={'share'}
-                  width={22}
-                  height={22}
-                />
-              }
-            />
-            <IconButton
-              icon={
-                <Image
                   src={'/web-icon.svg'}
                   alt={'web'}
                   width={24}
                   height={24}
                 />
               }
+              onClick={() => {
+                window.open(collection.webUrl);
+              }}
+            />
+            <IconButton
+              icon={
+                <Image
+                  src={'/discord-icon.svg'}
+                  alt={'discord'}
+                  width={20}
+                  height={20}
+                />
+              }
+              onClick={() => {
+                window.open(collection.discordUrl);
+              }}
+            />
+            <IconButton
+              icon={
+                <Image
+                  src={'/twitter-icon.svg'}
+                  alt={'twitter'}
+                  width={20}
+                  height={20}
+                />
+              }
+              onClick={() => {
+                window.open(collection.twitterUrl);
+              }}
             />
           </div>
         </div>
@@ -109,7 +131,7 @@ const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
             mr-[16px]
           `}
           >
-            {data.totalCount.toLocaleString()} items
+            {`${data.totalCount.toLocaleString()} items`}
           </p>
           <FilterButton onClick={() => openModal(searchModal, {})} />
           <p
@@ -128,7 +150,7 @@ const NftListHeader = ({ collection, searchModal }: NftListHeaderProps) => {
               ml-[4px]
             `}
             >
-              {collection.name === 'SNKRZ' ? 'Sort by Ratio' : 'Sort by Price'}
+              Sort by Price
             </span>
           </p>
         </div>

@@ -5,6 +5,7 @@ import LoginModal from './modals/login-modal';
 import { useMetaMask } from 'metamask-react';
 import Image from 'next/image';
 import React from 'react';
+import PortfolioModal from './modals/portfolio-modal';
 
 export type WalletConnectButtonProps = {
   children?: React.ReactNode;
@@ -23,7 +24,9 @@ export default function WalletConnectButton({
         bg-accent focus:outline-none
       `}
       onClick={() => {
-        if (status === 'notConnected') {
+        if (status === 'connected') {
+          openModal(PortfolioModal, {});
+        } else {
           openModal(LoginModal, {});
         }
       }}

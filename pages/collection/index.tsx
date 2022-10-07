@@ -15,13 +15,13 @@ interface CollectionData {
 }
 
 const COLLECTION_DATA: CollectionData[] = [
-  {
-    slug: 'derbystars',
-    title: 'Derby Stars',
-    backgroundImg: '/derby-bg.png',
-    logo: '/derby-logo.png',
-    active: true,
-  },
+  // {
+  //   slug: 'derbystars',
+  //   title: 'Derby Stars',
+  //   backgroundImg: '/derby-bg.png',
+  //   logo: '/derby-logo.png',
+  //   active: true,
+  // },
   {
     slug: 'snkrz',
     title: 'SNKRZ',

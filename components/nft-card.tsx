@@ -5,15 +5,21 @@ export type NFTCardProps = {
   name: string;
   image: string;
   children?: React.ReactNode;
+  isRented?: boolean;
 };
 
-export default function NFTCard({ name, image, children }: NFTCardProps) {
+export default function NFTCard({
+  name,
+  image,
+  children,
+  isRented = false,
+}: NFTCardProps) {
   return (
     <div
       className={tw`
         h-auto border-solid
         bg-primary-50 rounded-lg
-        flex flex-col pt-2 px-4
+        flex flex-col pt-2 px-4 ${isRented ? 'opacity-60' : ''}
       `}
     >
       <div className={tw`py-4 font-bold text-gray-600`}>{name}</div>
